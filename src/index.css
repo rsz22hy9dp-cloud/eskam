@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300;400;500;600&display=swap');
-@import url('https://fonts.cdnfonts.com/css/thunder');
+/* Thunder font unavailable — using Arial Narrow / Impact fallback */
 
 @tailwind base;
 @tailwind components;
@@ -55,7 +55,7 @@
     --col-white: #F7F6F5;
     --col-dark: #111111;
 
-    --font-head: 'Thunder', 'Arial Narrow', 'Impact', Arial, sans-serif;
+    --font-head: 'Arial Narrow', 'Impact', Arial, sans-serif;
     --font-body: 'Host Grotesk', sans-serif;
     --max-w: 1200px;
     --nav-h: 58px;

@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        head: ["Thunder", "Arial Narrow", "Impact", "Arial", "sans-serif"],
+        head: ["Arial Narrow", "Impact", "Arial", "sans-serif"],
         body: ["Host Grotesk", "sans-serif"],
       },
       colors: {
