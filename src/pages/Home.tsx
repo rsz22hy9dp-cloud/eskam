@@ -6,8 +6,8 @@ function Hero() {
   return (
     <section
       className="relative min-h-screen flex flex-col justify-center px-6 md:px-10 overflow-hidden"
-      style={{ backgroundColor: "var(--col-text)", marginTop: "calc(var(--nav-h) * -1)" }}
-    >
+      style={{ backgroundColor: "var(--col-text)", marginTop: "calc(var(--nav-h) * -1)" }}>
+      
       {/* Watermark */}
       <div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-head uppercase select-none pointer-events-none hidden md:block"
@@ -15,9 +15,9 @@ function Hero() {
           fontSize: "22vw",
           color: "transparent",
           WebkitTextStroke: "1px rgba(197,195,198,0.07)",
-          lineHeight: 1,
-        }}
-      >
+          lineHeight: 1
+        }}>
+        
         DELIVERY
       </div>
 
@@ -28,7 +28,7 @@ function Hero() {
             Change & Delivery Leadership
           </span>
           <span className="text-[11px] hidden md:block" style={{ color: "rgba(197,195,198,0.3)" }}>
-            London / Financial Services · MedTech · Product
+            Copenhagen / Financial Services · MedTech · Product
           </span>
         </div>
 
@@ -48,8 +48,8 @@ function Hero() {
         {/* Subheadline */}
         <p
           className="hero-animate hero-animate-3 font-body text-[16px] md:text-[18px] max-w-[50ch] mb-10"
-          style={{ color: "rgba(247,246,245,0.6)" }}
-        >
+          style={{ color: "rgba(247,246,245,0.6)" }}>
+          
           Stefan Eskam helps senior leaders in complex organisations close the gap
           between decision and delivery, without adding governance overhead.
         </p>
@@ -72,8 +72,8 @@ function Hero() {
         </span>
         <div className="scroll-pulse" />
       </div>
-    </section>
-  );
+    </section>);
+
 }
 
 function ProblemSection() {
@@ -118,19 +118,19 @@ function ProblemSection() {
             {/* Stats */}
             <div className="grid grid-cols-1 sm:grid-cols-2">
               {[
-                { stat: "20+", label: "Years inside complex organisations, not advising from the outside" },
-                { stat: "0", label: "Frameworks sold. No methodology pitch. No engagement theatre." },
-                { stat: "3", label: "Industries: financial services, MedTech, large-scale product" },
-                { stat: "1", label: "Question that matters: does delivery actually move?" },
-              ].map((item) => (
-                <div
-                  key={item.stat + item.label}
-                  className="p-[26px]"
-                  style={{
-                    border: "1px solid var(--col-primary)",
-                    backgroundColor: "var(--col-bg)",
-                  }}
-                >
+              { stat: "20+", label: "Years inside complex organisations, not advising from the outside" },
+              { stat: "0", label: "Frameworks sold. No methodology pitch. No engagement theatre." },
+              { stat: "3", label: "Industries: financial services, MedTech, large-scale product" },
+              { stat: "1", label: "Question that matters: does delivery actually move?" }].
+              map((item) =>
+              <div
+                key={item.stat + item.label}
+                className="p-[26px]"
+                style={{
+                  border: "1px solid var(--col-primary)",
+                  backgroundColor: "var(--col-bg)"
+                }}>
+                
                   <p className="font-head text-[60px] leading-none mb-3" style={{ color: "var(--col-accent)" }}>
                     {item.stat}
                   </p>
@@ -138,34 +138,34 @@ function ProblemSection() {
                     {item.label}
                   </p>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
 
 function WhatIDoSection() {
   const fade = useScrollFade();
   const items = [
-    {
-      num: "01",
-      title: "Reduce friction",
-      body: "Find what's actually slowing things down and remove it. Not by adding oversight, but by clarifying what needs a decision and who owns it.",
-    },
-    {
-      num: "02",
-      title: "Clarify priorities",
-      body: "When everything is a priority, nothing moves. I help leadership cut to the work that matters and communicate it in a way teams can act on.",
-    },
-    {
-      num: "03",
-      title: "Build execution systems",
-      body: "Lightweight structures that make decisions stick. Rhythm, accountability, and visibility, without a governance layer no one believes in.",
-    },
-  ];
+  {
+    num: "01",
+    title: "Reduce friction",
+    body: "Find what's actually slowing things down and remove it. Not by adding oversight, but by clarifying what needs a decision and who owns it."
+  },
+  {
+    num: "02",
+    title: "Clarify priorities",
+    body: "When everything is a priority, nothing moves. I help leadership cut to the work that matters and communicate it in a way teams can act on."
+  },
+  {
+    num: "03",
+    title: "Build execution systems",
+    body: "Lightweight structures that make decisions stick. Rhythm, accountability, and visibility, without a governance layer no one believes in."
+  }];
+
 
   return (
     <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>
@@ -179,16 +179,16 @@ function WhatIDoSection() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3">
-            {items.map((item) => (
-              <div
-                key={item.num}
-                className="relative p-8 transition-colors duration-200 hover:bg-[#1c1c1c]"
-                style={{ border: "1px solid rgba(197,195,198,0.12)" }}
-              >
+            {items.map((item) =>
+            <div
+              key={item.num}
+              className="relative p-8 transition-colors duration-200 hover:bg-[#1c1c1c]"
+              style={{ border: "1px solid rgba(197,195,198,0.12)" }}>
+              
                 <span
-                  className="absolute top-4 right-4 font-head text-[76px] leading-none select-none"
-                  style={{ color: "rgba(197,195,198,0.07)" }}
-                >
+                className="absolute top-4 right-4 font-head text-[76px] leading-none select-none"
+                style={{ color: "rgba(197,195,198,0.07)" }}>
+                
                   {item.num}
                 </span>
                 <div className="accent-line mb-6" />
@@ -199,22 +199,22 @@ function WhatIDoSection() {
                   {item.body}
                 </p>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
 
 function WhoSection() {
   const fade = useScrollFade();
   const listItems = [
-    "Financial services organisations navigating regulatory change alongside product delivery",
-    "MedTech and healthcare businesses scaling complex product programmes",
-    "Large product organisations where strategy and execution have come apart",
-    "Hiring managers looking for a senior operator, not a consultant",
-  ];
+  "Financial services organisations navigating regulatory change alongside product delivery",
+  "MedTech and healthcare businesses scaling complex product programmes",
+  "Large product organisations where strategy and execution have come apart",
+  "Hiring managers looking for a senior operator, not a consultant"];
+
 
   return (
     <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-bg)" }}>
@@ -238,12 +238,12 @@ function WhoSection() {
               </p>
             </div>
             <div>
-              {listItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="flex gap-3 py-4"
-                  style={{ borderBottom: "1px solid var(--col-primary)" }}
-                >
+              {listItems.map((item, i) =>
+              <div
+                key={i}
+                className="flex gap-3 py-4"
+                style={{ borderBottom: "1px solid var(--col-primary)" }}>
+                
                   <span className="font-body text-[13px] shrink-0" style={{ color: "var(--col-accent)" }}>
                     →
                   </span>
@@ -251,7 +251,7 @@ function WhoSection() {
                     {item}
                   </span>
                 </div>
-              ))}
+              )}
             </div>
           </div>
 
@@ -276,8 +276,8 @@ function WhoSection() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
 
 function ExperienceStrip() {
@@ -310,8 +310,8 @@ function ExperienceStrip() {
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
 
 function EbookTease() {
@@ -319,8 +319,8 @@ function EbookTease() {
   return (
     <section
       className="py-24 md:py-32 px-6 md:px-10"
-      style={{ backgroundColor: "var(--col-bg)", borderTop: "1px solid var(--col-primary)" }}
-    >
+      style={{ backgroundColor: "var(--col-bg)", borderTop: "1px solid var(--col-primary)" }}>
+      
       <div className="max-w-site mx-auto" ref={fade.ref}>
         <div className={`${fade.className} grid grid-cols-1 md:grid-cols-2 gap-16`}>
           {/* Left */}
@@ -353,8 +353,8 @@ function EbookTease() {
           {/* Right — Book cover */}
           <div
             className="relative p-[44px] md:p-[52px] flex flex-col justify-between overflow-hidden min-h-[400px]"
-            style={{ backgroundColor: "var(--col-text)" }}
-          >
+            style={{ backgroundColor: "var(--col-text)" }}>
+            
             <span className="block text-[10px] font-body font-semibold uppercase tracking-[0.2em]" style={{ color: "rgba(197,195,198,0.3)" }}>
               Coming 2025
             </span>
@@ -369,17 +369,17 @@ function EbookTease() {
             {/* Decorative circles */}
             <div
               className="absolute -bottom-16 -right-16 w-48 h-48 rounded-full"
-              style={{ border: "1px solid rgba(197,195,198,0.06)" }}
-            />
+              style={{ border: "1px solid rgba(197,195,198,0.06)" }} />
+            
             <div
               className="absolute -bottom-8 -right-8 w-32 h-32 rounded-full"
-              style={{ border: "1px solid rgba(197,195,198,0.06)" }}
-            />
+              style={{ border: "1px solid rgba(197,195,198,0.06)" }} />
+            
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
 
 function CTABand() {
@@ -406,8 +406,8 @@ function CTABand() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
 
 export default function Home() {
@@ -420,6 +420,6 @@ export default function Home() {
       <ExperienceStrip />
       <EbookTease />
       <CTABand />
-    </>
-  );
+    </>);
+
 }
