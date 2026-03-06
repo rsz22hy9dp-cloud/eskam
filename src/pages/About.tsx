@@ -56,10 +56,8 @@ export default function About() {
                 I don't sell a methodology. I don't arrive with a framework. I arrive with twenty years of scar tissue and a very low tolerance for work that doesn't move.
               </p>
             </div>
-            <div className="w-full aspect-square" style={{ backgroundColor: "var(--col-primary)" }}>
-              <div className="w-full h-full flex items-center justify-center font-head text-[24px] uppercase" style={{ color: "var(--col-secondary)" }}>
-                Photo
-              </div>
+            <div className="w-full aspect-square overflow-hidden">
+              <img src={stefanHeadshot} alt="Stefan Eskam" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

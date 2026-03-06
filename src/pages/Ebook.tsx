@@ -107,7 +107,9 @@ export default function Ebook() {
         <div className="max-w-site mx-auto" ref={fade3.ref}>
           <div className={`${fade3.className} grid grid-cols-1 md:grid-cols-2 gap-16 items-start`}>
             <div>
-              <div className="w-24 h-24 mb-6" style={{ backgroundColor: "var(--col-primary)" }} />
+              <div className="w-24 h-24 mb-6 overflow-hidden">
+                <img src={stefanAuthor} alt="Stefan Eskam" className="w-full h-full object-cover" />
+              </div>
               <p className="font-body text-[15px] leading-relaxed" style={{ color: "var(--col-secondary)" }}>
                 Stefan Eskam is a senior change and delivery leader with over twenty years of experience in financial services, MedTech, and large-scale product organisations. He lives and works in London.
               </p>
