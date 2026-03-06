@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
+import stefanAuthor from "@/assets/stefan-author.jpeg";
 
 const chapters = [
   { title: "The Execution Gap", body: "Why strategy fails to land. The real reasons programmes stall, and what the pattern looks like from inside the room." },
