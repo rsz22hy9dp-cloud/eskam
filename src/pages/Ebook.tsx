@@ -56,9 +56,11 @@ export default function Ebook() {
               Coming 2025
             </span>
             <h3 className="font-head text-[52px] md:text-[64px] uppercase leading-none my-auto" style={{ color: "var(--col-white)" }}>
-              Making
+              Notes
               <br />
-              It Land
+              From The
+              <br />
+              Inside
             </h3>
             <p className="text-[12px] font-body" style={{ color: "rgba(197,195,198,0.4)" }}>
               Stefan Eskam
