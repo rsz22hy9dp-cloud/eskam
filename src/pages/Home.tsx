@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
+import stefanCasual from "@/assets/stefan-casual.jpeg";
 
 function Hero() {
   return (
@@ -256,7 +257,8 @@ function WhoSection() {
           </div>
 
           {/* Right — Callout */}
-          <div className="p-10 flex flex-col justify-between" style={{ backgroundColor: "var(--col-accent)" }}>
+          <div className="relative p-10 flex flex-col justify-between overflow-hidden" style={{ backgroundColor: "var(--col-accent)" }}>
+            <img src={stefanCasual} alt="Stefan Eskam" className="absolute inset-0 w-full h-full object-cover opacity-15" />
             <div>
               <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] mb-6" style={{ color: "rgba(247,246,245,0.45)" }}>
                 What's different
