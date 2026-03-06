@@ -120,7 +120,7 @@ export default function Ebook() {
             </div>
             <div>
               <p className="font-head text-[28px] md:text-[36px] uppercase leading-[0.95]" style={{ color: "var(--col-text)" }}>
-                "I wrote the book I wanted to read fifteen years ago. The one that tells you what actually happens, not what's supposed to."
+                "I wrote the book I wanted to read fifteen years ago. The one that tells you what actually happens inside the room, not what's supposed to."
               </p>
             </div>
           </div>

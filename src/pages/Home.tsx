@@ -361,9 +361,11 @@ function EbookTease() {
               Coming 2025
             </span>
             <h3 className="font-head text-[48px] md:text-[52px] uppercase leading-none my-auto" style={{ color: "var(--col-white)" }}>
-              Making
+              Notes
               <br />
-              It Land
+              From The
+              <br />
+              Inside
             </h3>
             <p className="text-[12px] font-body" style={{ color: "rgba(197,195,198,0.4)" }}>
               Change & Delivery Leadership in Complex Organisations — Stefan Eskam
