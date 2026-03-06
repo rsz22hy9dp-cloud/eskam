@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
+import stefanCasual from "@/assets/stefan-casual.jpeg";
 
 function Hero() {
   return (
