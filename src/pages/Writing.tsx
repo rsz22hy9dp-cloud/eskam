@@ -82,7 +82,7 @@ export default function Writing() {
           <div>
             <span className="eyebrow block mb-4" style={{ color: "var(--col-primary)" }}>Ebook</span>
             <h2 className="font-head text-[36px] md:text-[48px] uppercase leading-[0.92] mb-4" style={{ color: "var(--col-white)" }}>
-              Making It Land
+              Notes From The Inside
             </h2>
             <p className="font-body text-[15px] max-w-[45ch]" style={{ color: "rgba(197,195,198,0.6)" }}>
               A practical guide to change and delivery leadership in complex organisations.

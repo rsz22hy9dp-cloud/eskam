@@ -32,9 +32,11 @@ export default function Ebook() {
           <div>
             <span className="eyebrow block mb-6" style={{ color: "var(--col-primary)" }}>Practical guide</span>
             <h1 className="font-head text-[56px] md:text-[96px] uppercase leading-[0.92] mb-4" style={{ color: "var(--col-white)" }}>
-              Making
+              Notes
               <br />
-              It Land
+              From The
+              <br />
+              Inside
             </h1>
             <p className="font-head text-[20px] md:text-[24px] uppercase mb-8" style={{ color: "var(--col-primary)", lineHeight: 1.1 }}>
               Change & Delivery Leadership in Complex Organisations
@@ -54,9 +56,11 @@ export default function Ebook() {
               Coming 2025
             </span>
             <h3 className="font-head text-[52px] md:text-[64px] uppercase leading-none my-auto" style={{ color: "var(--col-white)" }}>
-              Making
+              Notes
               <br />
-              It Land
+              From The
+              <br />
+              Inside
             </h3>
             <p className="text-[12px] font-body" style={{ color: "rgba(197,195,198,0.4)" }}>
               Stefan Eskam
@@ -116,7 +120,7 @@ export default function Ebook() {
             </div>
             <div>
               <p className="font-head text-[28px] md:text-[36px] uppercase leading-[0.95]" style={{ color: "var(--col-text)" }}>
-                "I wrote the book I wanted to read fifteen years ago. The one that tells you what actually happens, not what's supposed to."
+                "I wrote the book I wanted to read fifteen years ago. The one that tells you what actually happens inside the room, not what's supposed to."
               </p>
             </div>
           </div>

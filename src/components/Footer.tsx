@@ -93,7 +93,7 @@ export default function Footer() {
                 (e.currentTarget.style.color = "rgba(197,195,198,0.55)")
               }
             >
-              Making It Land
+              Notes From The Inside
             </Link>
           </div>
         </div>
