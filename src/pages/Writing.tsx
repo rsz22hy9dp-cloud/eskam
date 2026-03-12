@@ -4,6 +4,7 @@ import { useScrollFade } from "@/hooks/useScrollFade";
 import postTeamCheckin from "@/assets/post-team-checkin.png";
 import postRefinement from "@/assets/post-refinement.png";
 import postTeamGoal from "@/assets/post-team-goal.jpeg";
+import postRoleClarity from "@/assets/post-role-clarity.jpeg";
 
 const articles = [
   {
@@ -74,6 +75,40 @@ Two goals. One for what you're building. One for who you're being while you buil
 The second one is where the magic is.
 
 Does your team have a goal for itself, or just for the product?`,
+  },
+  {
+    date: "October 2025",
+    title: "Most role clarity problems aren't HR problems",
+    excerpt: "Slow decisions. Repeated conversations. Capable people always slightly off-target. The problem wasn't information — it was structure.",
+    slug: "#",
+    image: postRoleClarity,
+    body: `Most role clarity problems aren't HR problems.
+
+They're design problems.
+
+I've worked with organisations introducing new ways of working - where people were being asked to take on roles that didn't yet have a shared meaning.
+
+The symptom was always the same.
+
+Slow decisions. Repeated conversations. People who were capable but somehow always slightly off-target.
+
+Leadership would respond with more communication. More updates. Better town halls. It rarely helped.
+
+Because the problem wasn't information. It was structure.
+
+People didn't know what was expected of them. Not because they hadn't been told, but because the role itself had never been properly defined. No shared language. No clarity on boundaries. No consistent understanding across teams of what the role was actually for.
+
+So we started there.
+
+Interviews to find the real baseline. Workshops to surface the misalignments. One-pagers that gave people clarity on their role, their boundaries, and their next step.
+
+Not a document. A change process.
+
+And deliberately the first step in something larger - because you can't build organisational change on top of role confusion.
+
+I'm learning that when change stalls, the instinct is usually to push harder.
+
+But often the real question is simpler: do people actually know what's expected of them? If the answer is unclear, that's where the work begins.`,
   },
 ];
 
