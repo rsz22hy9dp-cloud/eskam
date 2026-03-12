@@ -4,6 +4,7 @@ import { useScrollFade } from "@/hooks/useScrollFade";
 import postTeamCheckin from "@/assets/post-team-checkin.png";
 import postRefinement from "@/assets/post-refinement.png";
 import postTeamGoal from "@/assets/post-team-goal.jpeg";
+import postRoleClarity from "@/assets/post-role-clarity.jpeg";
 
 const articles = [
   {
