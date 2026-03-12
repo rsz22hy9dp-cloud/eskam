@@ -75,12 +75,6 @@ The second one is where the magic is.
 
 Does your team have a goal for itself, or just for the product?`,
   },
-  { date: "February 2025", title: "Why delivery stalls aren't process problems", excerpt: "Most organisations respond to stalled delivery by adding process. More check-ins. More governance. More reporting. It almost never works, and here's why.", slug: "#" },
-  { date: "January 2025", title: "The difference between coordination and ownership", excerpt: "Coordinators keep the lights on. Owners change the wiring. If you're hiring for delivery, know which one you need.", slug: "#" },
-  { date: "December 2024", title: "Accountability without the overhead", excerpt: "You don't need a governance framework to make people accountable. You need clarity, rhythm, and someone willing to have the hard conversation.", slug: "#" },
-  { date: "November 2024", title: "What hiring managers get wrong about delivery roles", excerpt: "The job spec says delivery. The interview tests for communication. The role requires ownership. These are three different things.", slug: "#" },
-  { date: "October 2024", title: "Regulated industries and the speed myth", excerpt: "The idea that regulated industries can't move fast is wrong. They can't move carelessly. There's a difference, and it matters.", slug: "#" },
-  { date: "September 2024", title: "The first two weeks matter more than the first two months", excerpt: "How you show up in the first fortnight sets the tone for everything. Ship something. Name a problem. Make a decision. Then keep going.", slug: "#" },
 ];
 
 export default function Writing() {
