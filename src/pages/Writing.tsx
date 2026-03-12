@@ -51,6 +51,30 @@ A team that never gets to shape the work will eventually stop trying.
 
 Where in your process do people quietly stop thinking?`,
   },
+  {
+    date: "November 2025",
+    title: "Most teams have a goal for the product — few have one for themselves",
+    excerpt: "People were busy, but not really pulling together. A simple workshop changed everything: what do we each bring, and what do we want to become?",
+    slug: "#",
+    image: postTeamGoal,
+    body: `Most teams have a goal for the product. Few have a goal for themselves.
+
+I came into a team that had been working together for a while. On paper, things were fine. In practice, something was missing. People were busy, but not really pulling together.
+
+I ran a workshop. Simple premise: what do we each bring to this team, and what do we actually want to become?
+
+Not job titles. Not role descriptions. The real stuff. Current skills, hidden skills, things people wanted to learn. We put it all on the wall.
+
+That's when the room changed. Not with conflict, but with recognition. "I didn't know you had that skill." Followed, almost every time, by: "Could we use that when...?"
+
+I'm noticing that a team without a shared goal for itself will always default to the work. Which sounds fine, until the work gets hard and there's nothing holding people together.
+
+Two goals. One for what you're building. One for who you're being while you build it.
+
+The second one is where the magic is.
+
+Does your team have a goal for itself, or just for the product?`,
+  },
   { date: "February 2025", title: "Why delivery stalls aren't process problems", excerpt: "Most organisations respond to stalled delivery by adding process. More check-ins. More governance. More reporting. It almost never works, and here's why.", slug: "#" },
   { date: "January 2025", title: "The difference between coordination and ownership", excerpt: "Coordinators keep the lights on. Owners change the wiring. If you're hiring for delivery, know which one you need.", slug: "#" },
   { date: "December 2024", title: "Accountability without the overhead", excerpt: "You don't need a governance framework to make people accountable. You need clarity, rhythm, and someone willing to have the hard conversation.", slug: "#" },
