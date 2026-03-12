@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
 import postTeamCheckin from "@/assets/post-team-checkin.png";
+import postRefinement from "@/assets/post-refinement.png";
 
 const articles = [
   {
@@ -22,6 +23,32 @@ I'm noticing that Ways of Working rarely breaks because of missing templates or 
 
 The question didn't fix the team. But it gave them something worth working on together.`,
     featured: true,
+  },
+  {
+    date: "January 2026",
+    title: "The team that stopped seeing the point of refinement",
+    excerpt: "They already knew what to build. The recipe came attached. But a team that never gets to shape the work will eventually stop trying.",
+    slug: "#",
+    image: postRefinement,
+    body: `I once worked with a team that had stopped seeing the point of refinement.
+
+"Why are we spending time on this? We already know what to do."
+
+And they were right, in a way. By the time work reached them, the decisions had already been made. What to build. How to build it. The recipe came attached.
+
+My job as a coach was to ask questions. To slow down and explore. To find the option with the most potential rather than just execute the obvious one.
+
+They didn't like it. I could feel the frustration. Not aggressive, but real. Who is this person, and why is he making this harder?
+
+I've seen this more than once. The details change. The dynamic doesn't.
+
+I'm noticing that this is what low inclusion safety actually looks like in practice. Not conflict. Not disengagement. Just a team that has learned there's no point in thinking, because thinking isn't part of the job.
+
+Psychological safety isn't just about whether people feel safe to speak up. It starts earlier than that. It starts with whether people feel they have anything worth contributing in the first place.
+
+A team that never gets to shape the work will eventually stop trying.
+
+Where in your process do people quietly stop thinking?`,
   },
   { date: "February 2025", title: "Why delivery stalls aren't process problems", excerpt: "Most organisations respond to stalled delivery by adding process. More check-ins. More governance. More reporting. It almost never works, and here's why.", slug: "#" },
   { date: "January 2025", title: "The difference between coordination and ownership", excerpt: "Coordinators keep the lights on. Owners change the wiring. If you're hiring for delivery, know which one you need.", slug: "#" },
