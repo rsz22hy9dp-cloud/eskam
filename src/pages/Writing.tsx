@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
 import postTeamCheckin from "@/assets/post-team-checkin.png";
 import postRefinement from "@/assets/post-refinement.png";
+import postTeamGoal from "@/assets/post-team-goal.jpeg";
 
 const articles = [
   {
