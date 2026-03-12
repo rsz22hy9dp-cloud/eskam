@@ -5,6 +5,7 @@ import postTeamCheckin from "@/assets/post-team-checkin.png";
 import postRefinement from "@/assets/post-refinement.png";
 import postTeamGoal from "@/assets/post-team-goal.jpeg";
 import postRoleClarity from "@/assets/post-role-clarity.jpeg";
+import postProductIdeas from "@/assets/post-product-ideas.jpeg";
 
 const articles = [
   {
@@ -109,6 +110,32 @@ And deliberately the first step in something larger - because you can't build or
 I'm learning that when change stalls, the instinct is usually to push harder.
 
 But often the real question is simpler: do people actually know what's expected of them? If the answer is unclear, that's where the work begins.`,
+  },
+  {
+    date: "September 2025",
+    title: "Most product ideas should die — and that's the point",
+    excerpt: "On average, only 1 out of 7 ideas is actually good. If your ideas aren't being challenged early, they're probably failing late.",
+    slug: "#",
+    image: postProductIdeas,
+    body: `Most product ideas should die. And that's the point.
+
+Last week I joined a webinar with around 130 others on Hypothesis-driven development: stop guessing when building products. The key learning was uncomfortable, but hard to ignore: on average, only 1 out of 7 ideas is actually good.
+
+Most ideas fail because they break down in one or more of these four product risks:
+
+Value risk – Will customers actually buy it, or users choose to use it? If there's no real value, nothing else matters.
+
+Usability risk – Can users figure out how to use it easily? Even valuable ideas fail when the experience is too complex or confusing.
+
+Feasibility risk – Can the team realistically build it with the time, skills, and technology available?
+
+Business viability risk – Does it work for the broader business? Sales, marketing, legal, finance, and leadership all need to be on board.
+
+These lenses come from Marty Cagan, and they explain why so many well-intended initiatives quietly burn time, money, and energy without creating real impact.
+
+What I found most interesting is that the one idea that survives isn't "the brilliant one". It earns its place through iteration. Testing assumptions, learning fast, and reshaping the solution until it actually works.
+
+If your ideas aren't being challenged early, they're probably failing late.`,
   },
 ];
 
