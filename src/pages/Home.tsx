@@ -402,7 +402,7 @@ function CTABand() {
               No form. No deck. Just a conversation.
             </p>
             <Button variant="ghost" asChild>
-              <a href="mailto:hello@stefaneskam.com">Get in touch</a>
+              <a href="mailto:eskam@me.com">Get in touch</a>
             </Button>
             <Button variant="ghost" asChild className="opacity-70">
               <a href="#">Book a call</a>

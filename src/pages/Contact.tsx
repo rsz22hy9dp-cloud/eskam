@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
 
 const contactLinks = [
-  { label: "hello@stefaneskam.com", href: "mailto:hello@stefaneskam.com" },
+  { label: "eskam@me.com", href: "mailto:eskam@me.com" },
   { label: "LinkedIn ↗", href: "https://linkedin.com/in/stefaneskam" },
   { label: "Book a call ↗", href: "#" },
 ];
