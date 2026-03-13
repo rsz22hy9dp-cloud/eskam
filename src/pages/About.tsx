@@ -4,10 +4,57 @@ import { useScrollFade } from "@/hooks/useScrollFade";
 import stefanHeadshot from "@/assets/stefan-headshot.jpeg";
 
 const timeline = [
-  { role: "Head of Delivery", org: "Global Financial Services Firm", date: "2019 – Present", desc: "Leading cross-functional delivery across regulatory and product change." },
-  { role: "Senior Programme Manager", org: "MedTech Scale-up", date: "2015 – 2019", desc: "Built delivery capability from scratch across three product lines." },
-  { role: "Change & Delivery Lead", org: "Tier 1 Bank", date: "2010 – 2015", desc: "Owned end-to-end delivery of regulatory transformation programmes." },
-  { role: "Programme Manager", org: "Large Product Organisation", date: "2005 – 2010", desc: "Managed complex product launches across distributed teams." },
+  {
+    role: "Senior Agile Coach",
+    org: "3Shape",
+    date: "2023 – 2026",
+    summary: "Created transparency, alignment and flow between strategy and execution in a fast-growing, increasingly complex product organisation.",
+    highlights: [
+      "Designed and launched a quarterly planning and alignment model across multiple teams and functions",
+      "Improved transparency around priorities, dependencies, and capacity to support better leadership decisions",
+      "Shifted planning conversations from activity to outcomes, improving focus and execution",
+      "Acted as a trusted advisor to senior leaders on organisational design and ways of working",
+    ],
+    impact: [
+      "Enabled senior leadership to make clearer priority and investment decisions by establishing shared change and delivery transparency",
+      "Reduced coordination friction across multiple teams by introducing a common planning cadence and delivery language",
+      "Increased predictability of delivery by improving decision flow between business, product and technology",
+      "Strengthened organisational alignment without adding governance overhead",
+    ],
+  },
+  {
+    role: "Agile Coach / Change Agent",
+    org: "SDC",
+    date: "2022 – 2023",
+    summary: "Played a key role in strengthening organisational agility in a complex, regulated environment.",
+    highlights: [
+      "Defined Agile direction and core practices in a regulated, multi-customer environment",
+      "Helped leaders balance compliance demands with effective delivery",
+      "Created shared language and structures that reduced coordination overhead across teams",
+    ],
+    impact: [
+      "Helped leadership move from abstract ambition to concrete operating principles",
+      "Improved consistency in delivery practices across teams operating under regulatory constraints",
+      "Reduced uncertainty and rework by clarifying roles, decision rights and expectations",
+    ],
+  },
+  {
+    role: "Tribe Coach",
+    org: "Danske Bank",
+    date: "2002 – 2021",
+    summary: "Held a range of senior roles across the bank, progressing through multiple roles with increasing scope and complexity, and with growing responsibility for complex initiatives involving multiple stakeholders.",
+    highlights: [
+      "Held senior responsibility for ways of working across large, multi-team setups",
+      "Supported leadership teams in managing dependencies, priorities, and delivery risk",
+      "Improved delivery flow and predictability without adding unnecessary process",
+    ],
+    impact: [
+      "Delivered and supported strategic initiatives in one of the largest and most regulated financial institutions in the Nordics",
+      "Helped senior leaders navigate large-scale change without disrupting critical customer and credit operations",
+      "Built a reputation as a reliable operator in high-risk, high-complexity initiatives",
+    ],
+    footnote: "Other roles at Danske Bank included: Agile Coach, Business Analyst, People Manager & Privat Advisor.",
+  },
 ];
 
 const industries = [
@@ -72,11 +119,24 @@ export default function About() {
               Timeline
             </h2>
             {timeline.map((item, i) => (
-              <div key={i} className="py-8" style={{ borderBottom: "1px solid var(--col-primary)" }}>
+              <div key={i} className="py-10" style={{ borderBottom: "1px solid var(--col-primary)" }}>
                 <h3 className="font-head text-[24px] uppercase mb-1" style={{ color: "var(--col-text)" }}>{item.role}</h3>
-                <p className="font-body text-[14px] font-semibold mb-1" style={{ color: "var(--col-accent)" }}>{item.org}</p>
-                <p className="font-body text-[12px] mb-3" style={{ color: "var(--col-primary)" }}>{item.date}</p>
-                <p className="font-body text-[15px]" style={{ color: "var(--col-secondary)" }}>{item.desc}</p>
+                <p className="font-body text-[14px] font-semibold mb-1" style={{ color: "var(--col-accent)" }}>{item.org} | {item.date}</p>
+                <p className="font-body text-[15px] mt-4 mb-5" style={{ color: "var(--col-secondary)" }}>{item.summary}</p>
+                <ul className="space-y-2 mb-6">
+                  {item.highlights.map((h, j) => (
+                    <li key={j} className="font-body text-[14px] pl-4" style={{ color: "var(--col-secondary)", borderLeft: "2px solid var(--col-primary)" }}>{h}</li>
+                  ))}
+                </ul>
+                <p className="font-body text-[13px] font-semibold uppercase tracking-wide mb-3" style={{ color: "var(--col-accent)" }}>Impact & Results</p>
+                <ul className="space-y-2">
+                  {item.impact.map((imp, j) => (
+                    <li key={j} className="font-body text-[14px] pl-4" style={{ color: "var(--col-secondary)", borderLeft: "2px solid var(--col-accent)" }}>{imp}</li>
+                  ))}
+                </ul>
+                {"footnote" in item && item.footnote && (
+                  <p className="font-body text-[13px] italic mt-5" style={{ color: "var(--col-primary)" }}>{item.footnote}</p>
+                )}
               </div>
             ))}
           </div>
