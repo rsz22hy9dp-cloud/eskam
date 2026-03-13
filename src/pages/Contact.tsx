@@ -4,7 +4,7 @@ import { useScrollFade } from "@/hooks/useScrollFade";
 
 const contactLinks = [
   { label: "eskam@me.com", href: "mailto:eskam@me.com" },
-  { label: "LinkedIn ↗", href: "https://linkedin.com/in/stefaneskam" },
+  { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/stefaneskam/" },
   { label: "Book a call ↗", href: "#" },
 ];
 

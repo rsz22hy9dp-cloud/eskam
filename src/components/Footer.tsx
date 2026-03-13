@@ -9,7 +9,7 @@ const footerNav = [
 
 const footerConnect = [
   { label: "Email", href: "mailto:eskam@me.com" },
-  { label: "LinkedIn ↗", href: "https://linkedin.com/in/stefaneskam" },
+  { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/stefaneskam/" },
   { label: "Book a call ↗", href: "#" },
 ];
 
