@@ -215,16 +215,16 @@ export default function Writing() {
       <section className="py-20 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>
         <div className="max-w-site mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>
-            <span className="eyebrow block mb-4" style={{ color: "var(--col-primary)" }}>Ebook</span>
+            <span className="eyebrow block mb-2" style={{ color: "var(--col-primary)" }}>Ebook — Coming soon</span>
             <h2 className="font-head text-[36px] md:text-[48px] uppercase leading-[0.92] mb-4" style={{ color: "var(--col-white)" }}>
-              Notes From The Inside
+              Notes From The Whiteboard
             </h2>
             <p className="font-body text-[15px] max-w-[45ch]" style={{ color: "rgba(197,195,198,0.6)" }}>
-              A practical guide to change and delivery leadership in complex organisations.
+              Six standalone chapters for leaders and change-drivers in complex organisations.
             </p>
           </div>
           <Button variant="ghost" asChild>
-            <Link to="/ebook">Learn more</Link>
+            <Link to="/ebook">Sign up for chapter one</Link>
           </Button>
         </div>
       </section>

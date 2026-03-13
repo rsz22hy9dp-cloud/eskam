@@ -328,26 +328,28 @@ function EbookTease() {
           {/* Left */}
           <div>
             <span className="eyebrow block mb-6">Practical writing</span>
+            <span
+              className="inline-block px-3 py-1 text-[11px] font-body font-semibold uppercase tracking-[0.15em] mb-4"
+              style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
+            >
+              Coming soon
+            </span>
             <h2 className="font-head text-[48px] md:text-[72px] uppercase leading-[0.92] mb-8" style={{ color: "var(--col-text)" }}>
               The ebook
             </h2>
             <div className="font-body text-[17px] leading-relaxed space-y-6 mb-10" style={{ color: "var(--col-secondary)" }}>
               <p>
-                A practical guide to change and delivery leadership in complex
-                organisations. Not theory. Not case studies scrubbed clean of anything
-                useful. What actually happens, and what to do about it.
+                Not a handbook. Not consultant-speak. Just what I've seen, tried, and learned
+                over 20+ years inside complex organisations. Six standalone chapters for
+                leaders and change-drivers.
               </p>
               <p>
-                Written for delivery leaders, change managers, and senior operators who
-                want something they can use on Monday morning.
+                Written for people who do the work, not people who study it.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
               <Button variant="default" asChild>
-                <Link to="/ebook">Get the ebook</Link>
-              </Button>
-              <Button variant="ghost-dark" asChild>
-                <Link to="/ebook">Read a sample</Link>
+                <Link to="/ebook">Sign up for chapter one</Link>
               </Button>
             </div>
           </div>
@@ -365,7 +367,7 @@ function EbookTease() {
               <br />
               From The
               <br />
-              Inside
+              Whiteboard
             </h3>
             <p className="text-[12px] font-body" style={{ color: "rgba(197,195,198,0.4)" }}>
               Change & Delivery Leadership in Complex Organisations — Stefan Eskam
