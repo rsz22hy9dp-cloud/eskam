@@ -93,7 +93,7 @@ export default function Footer() {
                 (e.currentTarget.style.color = "rgba(197,195,198,0.55)")
               }
             >
-              Notes From The Inside
+              Notes From The Whiteboard
             </Link>
           </div>
         </div>

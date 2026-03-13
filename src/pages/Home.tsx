@@ -367,7 +367,7 @@ function EbookTease() {
               <br />
               From The
               <br />
-              Inside
+              Whiteboard
             </h3>
             <p className="text-[12px] font-body" style={{ color: "rgba(197,195,198,0.4)" }}>
               Change & Delivery Leadership in Complex Organisations — Stefan Eskam
