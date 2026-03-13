@@ -119,11 +119,24 @@ export default function About() {
               Timeline
             </h2>
             {timeline.map((item, i) => (
-              <div key={i} className="py-8" style={{ borderBottom: "1px solid var(--col-primary)" }}>
+              <div key={i} className="py-10" style={{ borderBottom: "1px solid var(--col-primary)" }}>
                 <h3 className="font-head text-[24px] uppercase mb-1" style={{ color: "var(--col-text)" }}>{item.role}</h3>
-                <p className="font-body text-[14px] font-semibold mb-1" style={{ color: "var(--col-accent)" }}>{item.org}</p>
-                <p className="font-body text-[12px] mb-3" style={{ color: "var(--col-primary)" }}>{item.date}</p>
-                <p className="font-body text-[15px]" style={{ color: "var(--col-secondary)" }}>{item.desc}</p>
+                <p className="font-body text-[14px] font-semibold mb-1" style={{ color: "var(--col-accent)" }}>{item.org} | {item.date}</p>
+                <p className="font-body text-[15px] mt-4 mb-5" style={{ color: "var(--col-secondary)" }}>{item.summary}</p>
+                <ul className="space-y-2 mb-6">
+                  {item.highlights.map((h, j) => (
+                    <li key={j} className="font-body text-[14px] pl-4" style={{ color: "var(--col-secondary)", borderLeft: "2px solid var(--col-primary)" }}>{h}</li>
+                  ))}
+                </ul>
+                <p className="font-body text-[13px] font-semibold uppercase tracking-wide mb-3" style={{ color: "var(--col-accent)" }}>Impact & Results</p>
+                <ul className="space-y-2">
+                  {item.impact.map((imp, j) => (
+                    <li key={j} className="font-body text-[14px] pl-4" style={{ color: "var(--col-secondary)", borderLeft: "2px solid var(--col-accent)" }}>{imp}</li>
+                  ))}
+                </ul>
+                {"footnote" in item && item.footnote && (
+                  <p className="font-body text-[13px] italic mt-5" style={{ color: "var(--col-primary)" }}>{item.footnote}</p>
+                )}
               </div>
             ))}
           </div>
