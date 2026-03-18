@@ -127,10 +127,17 @@ export default function Ebook() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ backgroundColor: "var(--col-primary)" }}>
               {chapters.map((ch) => (
-                <div key={ch.title} className="p-8" style={{ backgroundColor: "var(--col-bg)" }}>
-                  <span className="block text-[11px] font-body font-semibold uppercase tracking-[0.15em] mb-3" style={{ color: "var(--col-accent)" }}>
-                    Chapter {ch.number}
-                  </span>
+                <div key={ch.title} className="p-8 relative" style={{ backgroundColor: "var(--col-bg)" }}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="block text-[11px] font-body font-semibold uppercase tracking-[0.15em]" style={{ color: "var(--col-accent)" }}>
+                      Chapter {ch.number}
+                    </span>
+                    {"available" in ch && (
+                      <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] px-2 py-0.5" style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}>
+                        Available
+                      </span>
+                    )}
+                  </div>
                   <h3 className="font-head text-[22px] uppercase mb-4" style={{ color: "var(--col-text)" }}>{ch.title}</h3>
                   <p className="font-body text-[14px] leading-relaxed" style={{ color: "var(--col-secondary)" }}>{ch.body}</p>
                 </div>
