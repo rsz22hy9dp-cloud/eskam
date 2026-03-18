@@ -102,12 +102,16 @@ export default function Ebook() {
                   />
                   <button
                     type="submit"
-                    className="px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 shrink-0"
+                    disabled={loading}
+                    className="px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 shrink-0 disabled:opacity-50"
                     style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
                   >
-                    Get chapter one free
+                    {loading ? "Signing up…" : "Get chapter one free"}
                   </button>
                 </form>
+                {error && (
+                  <p className="font-body text-[13px] mt-2" style={{ color: "#e55" }}>{error}</p>
+                )}
               </div>
             ) : (
               <div className="px-4 py-3 max-w-[480px]" style={{ backgroundColor: "rgba(197,195,198,0.08)", border: "1px solid rgba(197,195,198,0.15)" }}>
