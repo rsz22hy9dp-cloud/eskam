@@ -349,7 +349,7 @@ function EbookTease() {
             </div>
             <div className="flex flex-wrap gap-4">
               <Button variant="default" asChild>
-                <Link to="/ebook">Sign up for chapter one</Link>
+                <Link to="/ebook">Get chapter one — free PDF</Link>
               </Button>
             </div>
           </div>
@@ -360,7 +360,7 @@ function EbookTease() {
             style={{ backgroundColor: "var(--col-text)" }}>
             
             <span className="block text-[10px] font-body font-semibold uppercase tracking-[0.2em]" style={{ color: "rgba(197,195,198,0.3)" }}>
-              Coming 2025
+              Chapter one · Available now
             </span>
             <h3 className="font-head text-[48px] md:text-[52px] uppercase leading-none my-auto" style={{ color: "var(--col-white)" }}>
               Notes
