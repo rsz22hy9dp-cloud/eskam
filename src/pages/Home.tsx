@@ -332,7 +332,7 @@ function EbookTease() {
               className="inline-block px-3 py-1 text-[11px] font-body font-semibold uppercase tracking-[0.15em] mb-4"
               style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
             >
-              Coming soon
+              Chapter one available now
             </span>
             <h2 className="font-head text-[48px] md:text-[72px] uppercase leading-[0.92] mb-8" style={{ color: "var(--col-text)" }}>
               The ebook
