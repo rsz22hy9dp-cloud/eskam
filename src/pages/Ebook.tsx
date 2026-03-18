@@ -237,10 +237,11 @@ export default function Ebook() {
               />
               <button
                 type="submit"
-                className="px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 shrink-0"
+                disabled={loading}
+                className="px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 shrink-0 disabled:opacity-50"
                 style={{ backgroundColor: "var(--col-text)", color: "var(--col-white)" }}
               >
-                Sign up
+                {loading ? "Signing up…" : "Sign up"}
               </button>
             </form>
           ) : (
