@@ -257,9 +257,19 @@ export default function Ebook() {
               </button>
             </form>
           ) : (
-            <p className="font-body text-[16px]" style={{ color: "var(--col-white)" }}>
-              ✓ You're in. Chapter one is on its way.
-            </p>
+            <div className="space-y-4">
+              <p className="font-body text-[16px]" style={{ color: "var(--col-white)" }}>
+                ✓ You're in. Download your free chapter below.
+              </p>
+              <a
+                href={CHAPTER_PDF_URL}
+                download="Notes-from-the-Whiteboard-Ways-of-Working.pdf"
+                className="inline-block px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90"
+                style={{ backgroundColor: "var(--col-text)", color: "var(--col-white)" }}
+              >
+                ↓ Download Chapter One (PDF)
+              </a>
+            </div>
           )}
         </div>
       </section>
