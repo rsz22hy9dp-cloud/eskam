@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useScrollFade } from "@/hooks/useScrollFade";
+import { supabase } from "@/integrations/supabase/client";
 import stefanAuthor from "@/assets/stefan-author.jpeg";
 
 const chapters = [
@@ -24,11 +25,32 @@ export default function Ebook() {
   const fade3 = useScrollFade();
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.trim()) {
-      setSubmitted(true);
+    if (!email.trim()) return;
+    setLoading(true);
+    setError("");
+    try {
+      const { error: dbError } = await supabase
+        .from("ebook_signups")
+        .insert({ email: email.trim().toLowerCase() });
+      if (dbError) {
+        if (dbError.code === "23505") {
+          // Already signed up — treat as success
+          setSubmitted(true);
+        } else {
+          setError("Something went wrong. Please try again.");
+        }
+      } else {
+        setSubmitted(true);
+      }
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
