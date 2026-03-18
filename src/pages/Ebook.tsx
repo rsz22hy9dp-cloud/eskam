@@ -60,32 +60,37 @@ export default function Ebook() {
 
             {/* Sign-up form */}
             {!submitted ? (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-[480px]">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email"
-                  className="flex-1 px-4 py-3 text-[14px] font-body outline-none"
-                  style={{
-                    backgroundColor: "rgba(247,246,245,0.08)",
-                    color: "var(--col-white)",
-                    border: "1px solid rgba(197,195,198,0.15)",
-                  }}
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 shrink-0"
-                  style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
-                >
-                  Get chapter one free
-                </button>
-              </form>
+              <div>
+                <p className="font-body text-[14px] mb-3" style={{ color: "rgba(247,246,245,0.5)" }}>
+                  Sign up to get the first chapter — Ways of Working — as a free PDF.
+                </p>
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-[480px]">
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Your email"
+                    className="flex-1 px-4 py-3 text-[14px] font-body outline-none"
+                    style={{
+                      backgroundColor: "rgba(247,246,245,0.08)",
+                      color: "var(--col-white)",
+                      border: "1px solid rgba(197,195,198,0.15)",
+                    }}
+                  />
+                  <button
+                    type="submit"
+                    className="px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 shrink-0"
+                    style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
+                  >
+                    Get chapter one free
+                  </button>
+                </form>
+              </div>
             ) : (
               <div className="px-4 py-3 max-w-[480px]" style={{ backgroundColor: "rgba(197,195,198,0.08)", border: "1px solid rgba(197,195,198,0.15)" }}>
                 <p className="font-body text-[15px]" style={{ color: "var(--col-white)" }}>
-                  ✓ You're in. Chapter one is on its way.
+                  ✓ You're in. Check your inbox — the first chapter is on its way.
                 </p>
               </div>
             )}
