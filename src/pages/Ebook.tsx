@@ -3,6 +3,8 @@ import { useScrollFade } from "@/hooks/useScrollFade";
 import { supabase } from "@/integrations/supabase/client";
 import stefanAuthor from "@/assets/stefan-author.jpeg";
 
+const CHAPTER_PDF_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/ebook/notes-from-the-whiteboard-ch1.pdf`;
+
 const chapters = [
   { number: "01", title: "Ways of Working", body: "A concrete look at how real working environments form — and what it takes to change them without losing people.", available: true },
   { number: "02", title: "Work the System, Not the People", body: "Why individual heroics don't scale. How to design the conditions where good work happens naturally." },
