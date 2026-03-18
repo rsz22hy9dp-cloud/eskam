@@ -3,7 +3,7 @@ import { useScrollFade } from "@/hooks/useScrollFade";
 import stefanAuthor from "@/assets/stefan-author.jpeg";
 
 const chapters = [
-  { number: "01", title: "Ways of Working", body: "A concrete look at how real working environments form — and what it takes to change them without losing people." },
+  { number: "01", title: "Ways of Working", body: "A concrete look at how real working environments form — and what it takes to change them without losing people.", available: true },
   { number: "02", title: "Work the System, Not the People", body: "Why individual heroics don't scale. How to design the conditions where good work happens naturally." },
   { number: "03", title: "Quarterly Planning & Work Breakdown", body: "A practical model for connecting strategy to execution without drowning in process and governance." },
   { number: "04", title: "Making Strategy Stick", body: "What actually happens between the strategy deck and Monday morning. How to close the gap." },
