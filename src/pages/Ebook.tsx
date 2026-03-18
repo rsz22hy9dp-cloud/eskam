@@ -42,7 +42,7 @@ export default function Ebook() {
               className="inline-block px-3 py-1 text-[11px] font-body font-semibold uppercase tracking-[0.15em] mb-6"
               style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
             >
-              Coming soon
+              Chapter one available now
             </span>
             <h1 className="font-head text-[56px] md:text-[96px] uppercase leading-[0.92] mb-4" style={{ color: "var(--col-white)" }}>
               Notes
