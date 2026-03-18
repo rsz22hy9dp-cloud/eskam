@@ -3,7 +3,7 @@ import { useScrollFade } from "@/hooks/useScrollFade";
 import stefanAuthor from "@/assets/stefan-author.jpeg";
 
 const chapters = [
-  { number: "01", title: "Ways of Working", body: "A concrete look at how real working environments form — and what it takes to change them without losing people." },
+  { number: "01", title: "Ways of Working", body: "A concrete look at how real working environments form — and what it takes to change them without losing people.", available: true },
   { number: "02", title: "Work the System, Not the People", body: "Why individual heroics don't scale. How to design the conditions where good work happens naturally." },
   { number: "03", title: "Quarterly Planning & Work Breakdown", body: "A practical model for connecting strategy to execution without drowning in process and governance." },
   { number: "04", title: "Making Strategy Stick", body: "What actually happens between the strategy deck and Monday morning. How to close the gap." },
@@ -42,7 +42,7 @@ export default function Ebook() {
               className="inline-block px-3 py-1 text-[11px] font-body font-semibold uppercase tracking-[0.15em] mb-6"
               style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
             >
-              Coming soon
+              Chapter one available now
             </span>
             <h1 className="font-head text-[56px] md:text-[96px] uppercase leading-[0.92] mb-4" style={{ color: "var(--col-white)" }}>
               Notes
@@ -60,32 +60,37 @@ export default function Ebook() {
 
             {/* Sign-up form */}
             {!submitted ? (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-[480px]">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email"
-                  className="flex-1 px-4 py-3 text-[14px] font-body outline-none"
-                  style={{
-                    backgroundColor: "rgba(247,246,245,0.08)",
-                    color: "var(--col-white)",
-                    border: "1px solid rgba(197,195,198,0.15)",
-                  }}
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 shrink-0"
-                  style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
-                >
-                  Get chapter one free
-                </button>
-              </form>
+              <div>
+                <p className="font-body text-[14px] mb-3" style={{ color: "rgba(247,246,245,0.5)" }}>
+                  Sign up to get the first chapter — Ways of Working — as a free PDF.
+                </p>
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-[480px]">
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Your email"
+                    className="flex-1 px-4 py-3 text-[14px] font-body outline-none"
+                    style={{
+                      backgroundColor: "rgba(247,246,245,0.08)",
+                      color: "var(--col-white)",
+                      border: "1px solid rgba(197,195,198,0.15)",
+                    }}
+                  />
+                  <button
+                    type="submit"
+                    className="px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 shrink-0"
+                    style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
+                  >
+                    Get chapter one free
+                  </button>
+                </form>
+              </div>
             ) : (
               <div className="px-4 py-3 max-w-[480px]" style={{ backgroundColor: "rgba(197,195,198,0.08)", border: "1px solid rgba(197,195,198,0.15)" }}>
                 <p className="font-body text-[15px]" style={{ color: "var(--col-white)" }}>
-                  ✓ You're in. Chapter one is on its way.
+                  ✓ You're in. Check your inbox — the first chapter is on its way.
                 </p>
               </div>
             )}
@@ -94,7 +99,7 @@ export default function Ebook() {
           {/* Book cover */}
           <div className="relative p-[44px] md:p-[52px] flex flex-col justify-between overflow-hidden min-h-[450px]" style={{ backgroundColor: "#0a0a0a" }}>
             <span className="block text-[10px] font-body font-semibold uppercase tracking-[0.2em]" style={{ color: "rgba(197,195,198,0.3)" }}>
-              Coming 2025
+              Chapter one out now
             </span>
             <h3 className="font-head text-[52px] md:text-[64px] uppercase leading-none my-auto" style={{ color: "var(--col-white)" }}>
               Notes
@@ -122,10 +127,17 @@ export default function Ebook() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ backgroundColor: "var(--col-primary)" }}>
               {chapters.map((ch) => (
-                <div key={ch.title} className="p-8" style={{ backgroundColor: "var(--col-bg)" }}>
-                  <span className="block text-[11px] font-body font-semibold uppercase tracking-[0.15em] mb-3" style={{ color: "var(--col-accent)" }}>
-                    Chapter {ch.number}
-                  </span>
+                <div key={ch.title} className="p-8 relative" style={{ backgroundColor: "var(--col-bg)" }}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="block text-[11px] font-body font-semibold uppercase tracking-[0.15em]" style={{ color: "var(--col-accent)" }}>
+                      Chapter {ch.number}
+                    </span>
+                    {"available" in ch && (
+                      <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] px-2 py-0.5" style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}>
+                        Available
+                      </span>
+                    )}
+                  </div>
                   <h3 className="font-head text-[22px] uppercase mb-4" style={{ color: "var(--col-text)" }}>{ch.title}</h3>
                   <p className="font-body text-[14px] leading-relaxed" style={{ color: "var(--col-secondary)" }}>{ch.body}</p>
                 </div>
