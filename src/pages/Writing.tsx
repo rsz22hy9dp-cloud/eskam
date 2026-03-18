@@ -215,7 +215,7 @@ export default function Writing() {
       <section className="py-20 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>
         <div className="max-w-site mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>
-            <span className="eyebrow block mb-2" style={{ color: "var(--col-primary)" }}>Ebook — Coming soon</span>
+            <span className="eyebrow block mb-2" style={{ color: "var(--col-primary)" }}>Ebook — Chapter one available now</span>
             <h2 className="font-head text-[36px] md:text-[48px] uppercase leading-[0.92] mb-4" style={{ color: "var(--col-white)" }}>
               Notes From The Whiteboard
             </h2>
