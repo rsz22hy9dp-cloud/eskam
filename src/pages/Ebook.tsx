@@ -116,10 +116,20 @@ export default function Ebook() {
                 )}
               </div>
             ) : (
-              <div className="px-4 py-3 max-w-[480px]" style={{ backgroundColor: "rgba(197,195,198,0.08)", border: "1px solid rgba(197,195,198,0.15)" }}>
-                <p className="font-body text-[15px]" style={{ color: "var(--col-white)" }}>
-                  ✓ You're in. Check your inbox — the first chapter is on its way.
-                </p>
+              <div className="max-w-[480px] space-y-4">
+                <div className="px-4 py-3" style={{ backgroundColor: "rgba(197,195,198,0.08)", border: "1px solid rgba(197,195,198,0.15)" }}>
+                  <p className="font-body text-[15px] mb-3" style={{ color: "var(--col-white)" }}>
+                    ✓ You're in. Download your free chapter below.
+                  </p>
+                  <a
+                    href={CHAPTER_PDF_URL}
+                    download="Notes-from-the-Whiteboard-Ways-of-Working.pdf"
+                    className="inline-block px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90"
+                    style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
+                  >
+                    ↓ Download Chapter One (PDF)
+                  </a>
+                </div>
               </div>
             )}
           </div>
