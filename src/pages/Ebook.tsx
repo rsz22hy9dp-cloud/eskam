@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useScrollFade } from "@/hooks/useScrollFade";
+import { supabase } from "@/integrations/supabase/client";
 import stefanAuthor from "@/assets/stefan-author.jpeg";
 
 const chapters = [
@@ -24,11 +25,32 @@ export default function Ebook() {
   const fade3 = useScrollFade();
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.trim()) {
-      setSubmitted(true);
+    if (!email.trim()) return;
+    setLoading(true);
+    setError("");
+    try {
+      const { error: dbError } = await supabase
+        .from("ebook_signups")
+        .insert({ email: email.trim().toLowerCase() });
+      if (dbError) {
+        if (dbError.code === "23505") {
+          // Already signed up — treat as success
+          setSubmitted(true);
+        } else {
+          setError("Something went wrong. Please try again.");
+        }
+      } else {
+        setSubmitted(true);
+      }
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -80,12 +102,16 @@ export default function Ebook() {
                   />
                   <button
                     type="submit"
-                    className="px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 shrink-0"
+                    disabled={loading}
+                    className="px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 shrink-0 disabled:opacity-50"
                     style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
                   >
-                    Get chapter one free
+                    {loading ? "Signing up…" : "Get chapter one free"}
                   </button>
                 </form>
+                {error && (
+                  <p className="font-body text-[13px] mt-2" style={{ color: "#e55" }}>{error}</p>
+                )}
               </div>
             ) : (
               <div className="px-4 py-3 max-w-[480px]" style={{ backgroundColor: "rgba(197,195,198,0.08)", border: "1px solid rgba(197,195,198,0.15)" }}>
@@ -211,10 +237,11 @@ export default function Ebook() {
               />
               <button
                 type="submit"
-                className="px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 shrink-0"
+                disabled={loading}
+                className="px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 shrink-0 disabled:opacity-50"
                 style={{ backgroundColor: "var(--col-text)", color: "var(--col-white)" }}
               >
-                Sign up
+                {loading ? "Signing up…" : "Sign up"}
               </button>
             </form>
           ) : (
