@@ -2,46 +2,33 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
 
-const principles = [
+const phases = [
   {
     num: "01",
-    title: "Clarity before action",
-    body: [
-      "Most delivery problems are decision problems in disguise. Work stalls because nobody has named the real blocker, or because three people think they own the same thing.",
-      "Before anything else, I find out where the ambiguity is. Then I remove it. Not with a workshop. With a conversation and a decision.",
-    ],
+    title: "Understand the real problem",
+    body: "Not the problem in the brief. The actual problem. Usually they are different. I spend the first week talking to the people doing the work and the people making the decisions. Then I tell you what I found — including the parts that are uncomfortable.",
   },
   {
     num: "02",
-    title: "Accountability, not oversight",
-    body: [
-      "Adding a governance layer rarely makes things faster. It makes people slower and more cautious. The work needs owners, not watchers.",
-      "I set up lightweight structures where people know what they own, when it's due, and who to escalate to. Then I get out of the way.",
-    ],
+    title: "Clarify what needs to move",
+    body: "Most organisations have too many priorities. I help leadership make explicit trade-offs about what matters now, what can wait, and what should stop. This is the work most people avoid. It is also the work that unlocks everything else.",
   },
   {
     num: "03",
-    title: "Momentum is the product",
-    body: [
-      "Plans are fine. Roadmaps are fine. But the only thing that matters is whether delivery is moving. Not in theory. In practice.",
-      "Everything I do is oriented towards one question: is the work actually landing? If not, why not, and what needs to change today?",
-    ],
+    title: "Build rhythm without overhead",
+    body: "Lightweight structures that make decisions visible and progress trackable. Not a new process. A cadence that the organisation will actually use — because it gives people what they need without adding to their workload.",
+  },
+  {
+    num: "04",
+    title: "Stay close to the work",
+    body: "I do not hand over a report and leave. I stay close to execution until things are moving reliably. That means being reachable, being direct, and being honest when something is not working.",
   },
 ];
 
-const scenarios = [
-  { situation: "The programme has stalled. Nobody owns the blockers.", response: "I identify the three decisions that will unlock movement, get them made within a week, and set up a rhythm so blockers surface before they stall delivery." },
-  { situation: "Leadership is aligned on strategy but teams can't execute.", response: "I translate the strategy into a delivery structure teams can act on — clear priorities, realistic timelines, and visible accountability." },
-  { situation: "Too many priorities. Everything is urgent.", response: "I work with leadership to cut the list to what actually matters this quarter. Then I make sure the rest gets communicated clearly." },
-  { situation: "Regulatory change is competing with product delivery.", response: "I build a delivery model that handles both tracks without doubling governance. The goal is one rhythm, not two worlds." },
-  { situation: "The last person in this role coordinated. They didn't own.", response: "I take ownership of the outcome, not the process. If something isn't working, I change it. I don't wait for permission." },
-  { situation: "Nobody trusts the delivery plan.", response: "I rebuild credibility by shipping something small and visible in the first two weeks. Trust comes from outcomes, not presentations." },
-];
-
 const notItems = [
-  { label: "Not a framework evangelist.", body: "I don't arrive with a branded methodology. I arrive with judgement and twenty years of knowing what actually works." },
-  { label: "Not a consultant selling methodology.", body: "No engagement theatre. No discovery phase designed to justify the next phase. If it's not working, I'll tell you in week one." },
-  { label: "Not a coordinator who needs clear air to work in.", body: "I operate in complexity. That's the whole point. If the environment were simple, you wouldn't need someone like me." },
+  "A methodology pitch. I do not sell frameworks.",
+  "A status-update layer. I own complexity, I do not just report on it.",
+  "Gradual onboarding. I am operational within two weeks, not two months.",
 ];
 
 export default function HowIWork() {
@@ -51,74 +38,62 @@ export default function HowIWork() {
 
   return (
     <>
-      {/* Header */}
+      {/* SECTION 1 — Hero */}
       <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>
         <div className="max-w-site mx-auto">
-          <span className="eyebrow block mb-6" style={{ color: "var(--col-primary)" }}>Approach</span>
-          <h1 className="font-head text-[40px] md:text-[80px] uppercase leading-[0.92] mb-6" style={{ color: "var(--col-white)" }}>
-            I don't add process.
+          <span className="eyebrow block mb-6" style={{ color: "var(--col-primary)" }}>
+            The approach
+          </span>
+          <h1
+            className="font-head text-[48px] md:text-[96px] uppercase leading-[0.92] mb-6"
+            style={{ color: "var(--col-white)" }}
+          >
+            No discovery
             <br />
-            I remove the reasons
-            <br />
-            it stalls.
+            theatre
           </h1>
-          <p className="font-body text-[18px] max-w-[55ch]" style={{ color: "rgba(247,246,245,0.6)" }}>
-            The way I work is built on three principles. None of them involve a slide deck.
+          <p
+            className="font-body text-[17px] leading-relaxed max-w-[58ch]"
+            style={{ color: "rgba(247,246,245,0.6)" }}
+          >
+            No six-week assessment. No methodology deck. No engagement framework with a branded
+            name. I come in, understand the actual problem, and start moving things within the
+            first two weeks. Here is what that looks like.
           </p>
         </div>
       </section>
 
-      {/* Principles */}
-      <section ref={fade1.ref}>
-        <div className={fade1.className}>
-          {principles.map((p, i) => (
-            <div
-              key={p.num}
-              className="py-24 md:py-32 px-6 md:px-10"
-              style={{
-                backgroundColor: i % 2 === 0 ? "var(--col-bg)" : "var(--col-white)",
-                borderBottom: "1px solid var(--col-primary)",
-              }}
+      {/* SECTION 2 — The phases */}
+      <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-bg)" }}>
+        <div className="max-w-site mx-auto" ref={fade1.ref}>
+          <div className={fade1.className}>
+            <span className="eyebrow block mb-6">What happens</span>
+            <h2
+              className="font-head text-[48px] md:text-[72px] uppercase leading-[0.92] mb-16"
+              style={{ color: "var(--col-text)" }}
             >
-              <div className="max-w-site mx-auto relative">
-                <span
-                  className="font-head text-[100px] md:text-[120px] leading-none absolute top-0 left-0 select-none"
-                  style={{ color: "transparent", WebkitTextStroke: "1px rgba(197,195,198,0.15)" }}
-                >
-                  {p.num}
-                </span>
-                <div className="pl-0 md:pl-40 pt-12 md:pt-0">
-                  <h2 className="font-head text-[36px] md:text-[48px] uppercase leading-[0.92] mb-8" style={{ color: "var(--col-text)" }}>
-                    {p.title}
-                  </h2>
-                  <div className="font-body text-[17px] leading-relaxed space-y-4 max-w-[55ch]" style={{ color: "var(--col-secondary)" }}>
-                    {p.body.map((para, j) => (
-                      <p key={j}>{para}</p>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Scenarios */}
-      <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>
-        <div className="max-w-site mx-auto" ref={fade2.ref}>
-          <div className={fade2.className}>
-            <span className="eyebrow block mb-6" style={{ color: "var(--col-primary)" }}>In practice</span>
-            <h2 className="font-head text-[48px] md:text-[72px] uppercase leading-[0.92] mb-16" style={{ color: "var(--col-white)" }}>
-              What this looks like
+              From day one
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{ backgroundColor: "rgba(197,195,198,0.12)" }}>
-              {scenarios.map((s, i) => (
-                <div key={i} className="p-8" style={{ backgroundColor: "var(--col-text)" }}>
-                  <p className="font-body text-[15px] font-semibold mb-4" style={{ color: "var(--col-white)" }}>
-                    "{s.situation}"
-                  </p>
-                  <p className="font-body text-[14px] leading-relaxed" style={{ color: "rgba(197,195,198,0.6)" }}>
-                    {s.response}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{ backgroundColor: "var(--col-primary)" }}>
+              {phases.map((p) => (
+                <div key={p.num} className="p-8 md:p-10" style={{ backgroundColor: "var(--col-bg)" }}>
+                  <span
+                    className="font-head text-[64px] leading-none block mb-4 select-none"
+                    style={{ color: "transparent", WebkitTextStroke: "1px rgba(197,195,198,0.25)" }}
+                  >
+                    {p.num}
+                  </span>
+                  <h3
+                    className="font-head text-[24px] uppercase leading-[0.92] mb-4"
+                    style={{ color: "var(--col-text)" }}
+                  >
+                    {p.title}
+                  </h3>
+                  <p
+                    className="font-body text-[15px] leading-relaxed"
+                    style={{ color: "var(--col-secondary)" }}
+                  >
+                    {p.body}
                   </p>
                 </div>
               ))}
@@ -127,19 +102,34 @@ export default function HowIWork() {
         </div>
       </section>
 
-      {/* What I am not */}
-      <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-bg)" }}>
-        <div className="max-w-site mx-auto max-w-[700px]" ref={fade3.ref}>
-          <div className={fade3.className}>
-            <span className="eyebrow block mb-6">What I am not</span>
+      {/* SECTION 3 — What I do not do */}
+      <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>
+        <div className="max-w-site mx-auto max-w-[700px]" ref={fade2.ref}>
+          <div className={fade2.className}>
+            <span className="eyebrow block mb-6" style={{ color: "var(--col-primary)" }}>
+              Also worth knowing
+            </span>
+            <h2
+              className="font-head text-[48px] md:text-[72px] uppercase leading-[0.92] mb-12"
+              style={{ color: "var(--col-white)" }}
+            >
+              What you will
+              <br />
+              not get
+            </h2>
             <div>
               {notItems.map((item, i) => (
-                <div key={i} className="flex gap-3 py-6" style={{ borderBottom: "1px solid var(--col-primary)" }}>
-                  <span className="font-body text-[15px] shrink-0" style={{ color: "var(--col-accent)" }}>→</span>
-                  <div>
-                    <p className="font-body text-[15px] font-semibold mb-1" style={{ color: "var(--col-text)" }}>{item.label}</p>
-                    <p className="font-body text-[14px]" style={{ color: "var(--col-secondary)" }}>{item.body}</p>
-                  </div>
+                <div
+                  key={i}
+                  className="flex gap-3 py-6"
+                  style={{ borderBottom: "1px solid rgba(197,195,198,0.15)" }}
+                >
+                  <span className="font-body text-[15px] shrink-0" style={{ color: "var(--col-accent)" }}>
+                    —
+                  </span>
+                  <p className="font-body text-[15px] leading-relaxed" style={{ color: "rgba(247,246,245,0.6)" }}>
+                    {item}
+                  </p>
                 </div>
               ))}
             </div>
@@ -147,15 +137,26 @@ export default function HowIWork() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 md:py-24 px-6 md:px-10" style={{ backgroundColor: "var(--col-accent)" }}>
-        <div className="max-w-site mx-auto text-center">
-          <h2 className="font-head text-[48px] md:text-[72px] uppercase leading-[0.92] mb-8" style={{ color: "var(--col-white)" }}>
-            Ready to find out if it's a fit?
-          </h2>
-          <Button variant="ghost" asChild>
-            <Link to="/contact">Start a conversation</Link>
-          </Button>
+      {/* SECTION 4 — CTA */}
+      <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-accent)" }}>
+        <div className="max-w-site mx-auto text-center" ref={fade3.ref}>
+          <div className={fade3.className}>
+            <h2
+              className="font-head text-[48px] md:text-[72px] uppercase leading-[0.92] mb-6"
+              style={{ color: "var(--col-white)" }}
+            >
+              Ready to start?
+            </h2>
+            <p
+              className="font-body text-[17px] mb-10"
+              style={{ color: "rgba(247,246,245,0.7)" }}
+            >
+              Let's talk about what you actually need.
+            </p>
+            <Button variant="ghost" asChild>
+              <Link to="/contact">Start a conversation</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </>
