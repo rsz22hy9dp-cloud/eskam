@@ -18,8 +18,8 @@ export default function Navbar() {
       <nav
         className="fixed top-0 left-0 right-0 z-50 h-nav flex items-center justify-between px-6 md:px-10"
         style={{
-          backgroundColor: "var(--col-bg)",
-          borderBottom: "1px solid var(--col-primary)",
+          backgroundColor: "#FFFFFF",
+          borderBottom: "1px solid #E0DED8",
         }}
       >
         <Link
