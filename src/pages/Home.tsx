@@ -357,7 +357,7 @@ function EbookTease() {
             style={{ backgroundColor: "var(--col-text)" }}>
             
             <span className="block text-[10px] font-body font-semibold uppercase tracking-[0.2em]" style={{ color: "rgba(197,195,198,0.3)" }}>
-              Chapter one · Available now
+              Coming 2026
             </span>
             <h3 className="font-head text-[48px] md:text-[52px] uppercase leading-none my-auto" style={{ color: "var(--col-white)" }}>
               Notes
