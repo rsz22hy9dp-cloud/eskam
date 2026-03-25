@@ -9,15 +9,15 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "px-[22px] py-[9px] bg-brand-text text-brand-white hover:bg-brand-accent",
+          "px-[24px] py-[10px] bg-[#1A1A1A] text-[#F5F4F0] border-none hover:bg-[#333333]",
         primary:
-          "px-[22px] py-[9px] bg-brand-white text-brand-text hover:bg-brand-accent hover:text-brand-white",
+          "px-[24px] py-[10px] bg-[#1A1A1A] text-[#F5F4F0] border-none hover:bg-[#333333]",
         ghost:
-          "px-[22px] py-[9px] bg-transparent border-[1.5px] border-[rgba(255,255,255,0.35)] text-brand-white hover:bg-brand-white hover:text-brand-text",
+          "px-[24px] py-[10px] bg-transparent border border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-[#F5F4F0]",
         "ghost-dark":
-          "px-[22px] py-[9px] bg-transparent border-[1.5px] border-brand-secondary text-brand-secondary hover:bg-brand-text hover:text-brand-white",
+          "px-[24px] py-[10px] bg-transparent border border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-[#F5F4F0]",
         accent:
-          "px-[22px] py-[9px] bg-brand-accent text-brand-white hover:bg-brand-secondary",
+          "px-[24px] py-[10px] bg-[#1A1A1A] text-[#F5F4F0] border-none hover:bg-[#333333]",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:

@@ -18,8 +18,8 @@ export default function Navbar() {
       <nav
         className="fixed top-0 left-0 right-0 z-50 h-nav flex items-center justify-between px-6 md:px-10"
         style={{
-          backgroundColor: "var(--col-bg)",
-          borderBottom: "1px solid var(--col-primary)",
+          backgroundColor: "#FFFFFF",
+          borderBottom: "1px solid #E0DED8",
         }}
       >
         <Link
@@ -52,10 +52,10 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <Link
             to="/contact"
-            className="cta-text px-[22px] py-[9px] transition-colors hover:opacity-90"
+            className="cta-text px-[24px] py-[10px] transition-colors hover:bg-[#333333]"
             style={{
-              backgroundColor: "var(--col-accent)",
-              color: "var(--col-white)",
+              backgroundColor: "#1A1A1A",
+              color: "#F5F4F0",
             }}
           >
             Let's talk

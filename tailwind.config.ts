@@ -53,7 +53,7 @@ export default {
         },
         // Brand colors
         brand: {
-          bg: "#DCDCDD",
+          bg: "#F5F4F0",
           text: "#1A1A1A",
           primary: "#C5C3C6",
           secondary: "#46494C",
