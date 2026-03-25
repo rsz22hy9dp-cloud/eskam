@@ -339,12 +339,9 @@ function EbookTease() {
             </h2>
             <div className="font-body text-[17px] leading-relaxed space-y-6 mb-10" style={{ color: "var(--col-secondary)" }}>
               <p>
-                Not a handbook. Not consultant-speak. Just what I've seen, tried, and learned
-                over 20+ years inside complex organisations. Six standalone chapters for
-                leaders and change-drivers.
-              </p>
-              <p>
-                Written for people who do the work, not people who study it.
+                Not a handbook. Not consultant-speak. Six standalone chapters on what actually
+                works inside complex organisations — written for people who do the work, not
+                people who study it.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
