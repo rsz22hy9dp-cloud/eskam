@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
+import stefanWhiteboard from "@/assets/stefan-whiteboard.jpeg";
 
 const phases = [
   {
@@ -39,8 +40,12 @@ export default function HowIWork() {
   return (
     <>
       {/* SECTION 1 — Hero */}
-      <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>
-        <div className="max-w-site mx-auto">
+      <section
+        className="relative py-24 md:py-32 px-6 md:px-10 bg-cover bg-center"
+        style={{ backgroundImage: `url(${stefanWhiteboard})` }}
+      >
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(26,26,26,0.65)" }} />
+        <div className="max-w-site mx-auto relative z-10">
           <span className="eyebrow block mb-6" style={{ color: "var(--col-primary)" }}>
             The approach
           </span>

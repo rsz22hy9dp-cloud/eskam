@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
+import stefanHeadshot from "@/assets/stefan-headshot.jpeg";
 
 const career = [
   {
@@ -30,29 +31,41 @@ export default function About() {
       {/* SECTION 1 — Hero */}
       <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>
         <div className="max-w-site mx-auto">
-          <span className="eyebrow block mb-6" style={{ color: "var(--col-primary)" }}>
-            Who I am
-          </span>
-          <h1
-            className="font-head text-[48px] md:text-[96px] uppercase leading-[0.92] mb-6"
-            style={{ color: "var(--col-white)" }}
-          >
-            Stefan Eskam
-          </h1>
-          <p
-            className="font-body text-[13px] font-semibold uppercase tracking-[0.12em] mb-8"
-            style={{ color: "var(--col-accent)" }}
-          >
-            Change & Delivery Leadership in Complex Organisations
-          </p>
-          <p
-            className="font-body text-[17px] leading-relaxed max-w-[58ch]"
-            style={{ color: "rgba(247,246,245,0.6)" }}
-          >
-            Twenty years inside complex organisations. Not advising from the outside — inside.
-            Carrying programmes that couldn't afford to fail, in environments where misalignment
-            has a cost. That is the work I know. Not from a framework. From doing it.
-          </p>
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+            <div className="flex-1">
+              <span className="eyebrow block mb-6" style={{ color: "var(--col-primary)" }}>
+                Who I am
+              </span>
+              <h1
+                className="font-head text-[48px] md:text-[96px] uppercase leading-[0.92] mb-6"
+                style={{ color: "var(--col-white)" }}
+              >
+                Stefan Eskam
+              </h1>
+              <p
+                className="font-body text-[13px] font-semibold uppercase tracking-[0.12em] mb-8"
+                style={{ color: "var(--col-accent)" }}
+              >
+                Change & Delivery Leadership in Complex Organisations
+              </p>
+              <p
+                className="font-body text-[17px] leading-relaxed max-w-[58ch]"
+                style={{ color: "rgba(247,246,245,0.6)" }}
+              >
+                Twenty years inside complex organisations. Not advising from the outside — inside.
+                Carrying programmes that couldn't afford to fail, in environments where misalignment
+                has a cost. That is the work I know. Not from a framework. From doing it.
+              </p>
+            </div>
+            <div className="flex justify-center md:justify-end shrink-0">
+              <img
+                src={stefanHeadshot}
+                alt="Stefan Eskam"
+                className="w-[240px] md:w-auto md:max-w-[320px] rounded-lg md:rounded-none object-cover"
+                style={{ maxHeight: "500px" }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 

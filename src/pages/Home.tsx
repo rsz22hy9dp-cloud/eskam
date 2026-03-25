@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
 import stefanCasual from "@/assets/stefan-casual.jpeg";
+import stefanHeadshot from "@/assets/stefan-headshot.jpeg";
 
 function Hero() {
   return (
@@ -307,9 +308,17 @@ function ExperienceStrip() {
             the gap between them is rarely what it looks like on paper.
           </p>
 
-          <Button variant="ghost" asChild className="shrink-0">
-            <Link to="/about">About Stefan</Link>
-          </Button>
+          <div className="flex items-center gap-4 shrink-0">
+            <img
+              src={stefanHeadshot}
+              alt="Stefan Eskam"
+              className="w-[72px] h-[72px] rounded-full object-cover object-top"
+              style={{ boxShadow: "0 4px 12px rgba(0,0,0,0.3)" }}
+            />
+            <Button variant="ghost" asChild>
+              <Link to="/about">About Stefan</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>);
