@@ -52,10 +52,10 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <Link
             to="/contact"
-            className="cta-text px-[22px] py-[9px] transition-colors hover:opacity-90"
+            className="cta-text px-[24px] py-[10px] transition-colors hover:bg-[#333333]"
             style={{
-              backgroundColor: "var(--col-accent)",
-              color: "var(--col-white)",
+              backgroundColor: "#1A1A1A",
+              color: "#F5F4F0",
             }}
           >
             Let's talk
