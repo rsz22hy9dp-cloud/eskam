@@ -76,7 +76,7 @@ export default function Writing() {
               className="font-body text-[17px] mb-10"
               style={{ color: "var(--col-secondary)" }}
             >
-              Sign up below to receive the first chapter when it is released.
+              Sign up below to receive the first chapter.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-[480px] mx-auto">
               <input
