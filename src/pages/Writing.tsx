@@ -70,7 +70,7 @@ export default function Writing() {
             >
               Chapter one
               <br />
-              available soon
+              is here
             </h2>
             <p
               className="font-body text-[17px] mb-10"
@@ -101,7 +101,7 @@ export default function Writing() {
                   color: "var(--col-white)",
                 }}
               >
-                {loading ? "..." : "Send me chapter one"}
+                {loading ? "..." : "Get chapter one"}
               </button>
             </form>
           </div>
