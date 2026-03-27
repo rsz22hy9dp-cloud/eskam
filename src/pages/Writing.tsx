@@ -101,7 +101,7 @@ export default function Writing() {
                   color: "var(--col-white)",
                 }}
               >
-                {loading ? "..." : "Send me chapter one"}
+                {loading ? "..." : "Get chapter one"}
               </button>
             </form>
           </div>
