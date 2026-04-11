@@ -14,10 +14,26 @@ export default function Contact() {
   const fade = useScrollFade();
   const [form, setForm] = useState({ name: "", email: "", org: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder
-    alert("Message sent. Thank you.");
+    setSending(true);
+    try {
+      const { error } = await supabase.from("contact_messages").insert({
+        name: form.name,
+        email: form.email,
+        org: form.org || null,
+        message: form.message,
+      });
+      if (error) throw error;
+      toast.success("Message sent. Thank you.");
+      setForm({ name: "", email: "", org: "", message: "" });
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
