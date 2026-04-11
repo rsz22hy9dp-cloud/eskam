@@ -117,8 +117,8 @@ export default function Contact() {
                   }}
                 />
               </div>
-              <Button variant="default" type="submit" className="w-full">
-                Send
+              <Button variant="default" type="submit" className="w-full" disabled={sending}>
+                {sending ? "Sending…" : "Send"}
               </Button>
             </form>
           </div>
