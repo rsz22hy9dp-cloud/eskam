@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/components/ui/sonner";
 
 const contactLinks = [
   { label: "eskam@me.com", href: "mailto:eskam@me.com" },
@@ -12,10 +14,26 @@ export default function Contact() {
   const fade = useScrollFade();
   const [form, setForm] = useState({ name: "", email: "", org: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder
-    alert("Message sent. Thank you.");
+    setSending(true);
+    try {
+      const { error } = await supabase.from("contact_messages").insert({
+        name: form.name,
+        email: form.email,
+        org: form.org || null,
+        message: form.message,
+      });
+      if (error) throw error;
+      toast.success("Message sent. Thank you.");
+      setForm({ name: "", email: "", org: "", message: "" });
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -99,8 +117,8 @@ export default function Contact() {
                   }}
                 />
               </div>
-              <Button variant="default" type="submit" className="w-full">
-                Send
+              <Button variant="default" type="submit" className="w-full" disabled={sending}>
+                {sending ? "Sending…" : "Send"}
               </Button>
             </form>
           </div>
