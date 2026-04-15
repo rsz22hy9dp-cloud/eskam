@@ -67,7 +67,7 @@ export default function Ebook() {
               className="inline-block px-3 py-1 text-[11px] font-body font-semibold uppercase tracking-[0.15em] mb-6"
               style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
             >
-              Chapter one available now
+              Two chapters available now
             </span>
             <h1 className="font-head text-[56px] md:text-[96px] uppercase leading-[0.92] mb-4" style={{ color: "var(--col-white)" }}>
               Notes
@@ -120,16 +120,21 @@ export default function Ebook() {
               <div className="max-w-[480px] space-y-4">
                 <div className="px-4 py-3" style={{ backgroundColor: "rgba(197,195,198,0.08)", border: "1px solid rgba(197,195,198,0.15)" }}>
                   <p className="font-body text-[15px] mb-3" style={{ color: "var(--col-white)" }}>
-                    ✓ You're in. Download your free chapter below.
+                    ✓ You're in. Download your free chapters below.
                   </p>
-                  <a
-                    href={CHAPTER_PDF_URL}
-                    download="Notes-from-the-Whiteboard-Ways-of-Working.pdf"
-                    className="inline-block px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90"
-                    style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
-                  >
-                    ↓ Download Chapter One (PDF)
-                  </a>
+                  <div className="flex flex-col gap-2">
+                    {chapters.filter(ch => ch.available).map(ch => (
+                      <a
+                        key={ch.number}
+                        href={ch.pdfUrl}
+                        download={ch.pdfFilename}
+                        className="inline-block px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 text-center"
+                        style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
+                      >
+                        ↓ Chapter {ch.number}: {ch.title} (PDF)
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
@@ -228,10 +233,10 @@ export default function Ebook() {
       <section className="py-20 md:py-24 px-6 md:px-10" style={{ backgroundColor: "var(--col-accent)" }}>
         <div className="max-w-site mx-auto text-center">
           <h2 className="font-head text-[48px] md:text-[72px] uppercase leading-[0.92] mb-4" style={{ color: "var(--col-white)" }}>
-            Get chapter one.
+            Get the chapters.
           </h2>
           <p className="font-body text-[16px] mb-8 max-w-[45ch] mx-auto" style={{ color: "rgba(247,246,245,0.6)" }}>
-            Sign up and be the first to read it when it drops.
+            Sign up and download both available chapters for free.
           </p>
           {!submitted ? (
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-[440px] mx-auto">
@@ -260,16 +265,21 @@ export default function Ebook() {
           ) : (
             <div className="space-y-4">
               <p className="font-body text-[16px]" style={{ color: "var(--col-white)" }}>
-                ✓ You're in. Download your free chapter below.
+                ✓ You're in. Download your free chapters below.
               </p>
-              <a
-                href={CHAPTER_PDF_URL}
-                download="Notes-from-the-Whiteboard-Ways-of-Working.pdf"
-                className="inline-block px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90"
-                style={{ backgroundColor: "var(--col-text)", color: "var(--col-white)" }}
-              >
-                ↓ Download Chapter One (PDF)
-              </a>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                {chapters.filter(ch => ch.available).map(ch => (
+                  <a
+                    key={ch.number}
+                    href={ch.pdfUrl}
+                    download={ch.pdfFilename}
+                    className="inline-block px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90"
+                    style={{ backgroundColor: "var(--col-text)", color: "var(--col-white)" }}
+                  >
+                    ↓ Chapter {ch.number} (PDF)
+                  </a>
+                ))}
+              </div>
             </div>
           )}
         </div>
