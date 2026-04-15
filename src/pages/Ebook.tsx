@@ -109,7 +109,7 @@ export default function Ebook() {
                     className="px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 shrink-0 disabled:opacity-50"
                     style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
                   >
-                    {loading ? "Signing up…" : "Get chapter one free"}
+                    {loading ? "Signing up…" : "Get both chapters free"}
                   </button>
                 </form>
                 {error && (
