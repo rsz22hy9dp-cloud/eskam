@@ -3,7 +3,8 @@ import { useScrollFade } from "@/hooks/useScrollFade";
 import { supabase } from "@/integrations/supabase/client";
 import stefanAuthor from "@/assets/stefan-author.jpeg";
 
-const CHAPTER_PDF_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/ebook/notes-from-the-whiteboard-ch1.pdf`;
+const CHAPTER_1_PDF_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/ebook/notes-from-the-whiteboard-ch1.pdf`;
+const CHAPTER_2_PDF_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/ebook/notes-from-the-whiteboard-ch2.pdf`;
 
 const chapters = [
   { number: "01", title: "Ways of Working", body: "A concrete look at how real working environments form — and what it takes to change them without losing people.", available: true },
