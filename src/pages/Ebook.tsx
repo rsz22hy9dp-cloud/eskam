@@ -87,7 +87,7 @@ export default function Ebook() {
             {!submitted ? (
               <div>
                 <p className="font-body text-[14px] mb-3" style={{ color: "rgba(247,246,245,0.5)" }}>
-                  Sign up to get the first chapter — Ways of Working — as a free PDF.
+                  Sign up to get the available chapters as free PDFs.
                 </p>
                 <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-[480px]">
                   <input
