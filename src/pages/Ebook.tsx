@@ -268,7 +268,7 @@ export default function Ebook() {
                 ✓ You're in. Download your free chapters below.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                {chapters.filter(ch => ch.available).map(ch => (
+                {chapters.filter(ch => ch.available).map((ch, idx) => (
                   <a
                     key={ch.number}
                     href={ch.pdfUrl}
@@ -276,7 +276,7 @@ export default function Ebook() {
                     className="inline-block px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90"
                     style={{ backgroundColor: "var(--col-text)", color: "var(--col-white)" }}
                   >
-                    ↓ Chapter {ch.number} (PDF)
+                    ↓ {idx === 0 ? "Get the first two chapters - free PDF" : `Chapter ${ch.number} - free PDF`}
                   </a>
                 ))}
               </div>
