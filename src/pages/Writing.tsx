@@ -89,7 +89,7 @@ export default function Writing() {
               src={avatar}
               alt="Stefan Eskam"
               className="block w-full max-w-[300px] h-auto"
-              style={{ mixBlendMode: "screen" }}
+              
             />
           </div>
         </div>
