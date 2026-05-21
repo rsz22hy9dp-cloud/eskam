@@ -1,291 +1,123 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
-import { supabase } from "@/integrations/supabase/client";
-import stefanAuthor from "@/assets/stefan-author.jpeg";
 
-const CHAPTER_1_PDF_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/ebook/notes-from-the-whiteboard-ch1.pdf`;
-const CHAPTER_2_PDF_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/ebook/notes-from-the-whiteboard-ch2.pdf`;
-const CHAPTER_3_PDF_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/ebook/notes-from-the-whiteboard-ch3.pdf`;
+const STORAGE_BASE = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/ebook`;
 
 const chapters = [
-  { number: "01", title: "Ways of Working", body: "A concrete look at how real working environments form — and what it takes to change them without losing people.", available: true, pdfUrl: CHAPTER_1_PDF_URL, pdfFilename: "Notes-from-the-Whiteboard-Ways-of-Working.pdf" },
-  { number: "02", title: "Work the System, Not the People", body: "Why individual heroics don't scale. How to design the conditions where good work happens naturally.", available: true, pdfUrl: CHAPTER_2_PDF_URL, pdfFilename: "Notes-from-the-Whiteboard-Work-the-System.pdf" },
-  { number: "03", title: "Quarterly Planning — Making the Plan Mean Something", body: "A practical model for connecting strategy to execution without drowning in process and governance.", available: true, pdfUrl: CHAPTER_3_PDF_URL, pdfFilename: "Notes-from-the-Whiteboard-Quarterly-Planning.pdf" },
-  { number: "04", title: "Making Strategy Stick", body: "What actually happens between the strategy deck and Monday morning. How to close the gap." },
-  { number: "05", title: "Leadership in Complexity", body: "Leading when you can't predict outcomes. How to build trust, make decisions, and move forward without a playbook." },
-  { number: "06", title: "Take Care of Yourself First", body: "The chapter no one writes. Why sustainable impact starts with how you manage yourself." },
-];
-
-const readers = [
-  "Delivery leaders who've inherited a stalled programme and need to move it, not just report on it.",
-  "Change managers in regulated industries who are tired of frameworks that don't survive contact with reality.",
-  "Senior operators who want a book written by someone who's been in the room, not someone who's studied it.",
-  "Leaders and coaches navigating complexity who want honest accounts, not polished success stories.",
+  {
+    number: "01",
+    title: "Why Delivery Stalls",
+    body: "Most programmes don't fail because of poor planning. They fail because no one owns the gap between the decision and the work. This chapter is about where that gap lives and how to close it fast.",
+    file: "notes-from-the-whiteboard-ch1.pdf",
+    filename: "Notes-from-the-Whiteboard-Ch1-Why-Delivery-Stalls.pdf",
+  },
+  {
+    number: "02",
+    title: "Clarifying Priorities at Speed",
+    body: "When everything is a priority, nothing moves. This chapter is about how to have the conversation that cuts through it — without losing the room.",
+    file: "notes-from-the-whiteboard-ch2.pdf",
+    filename: "Notes-from-the-Whiteboard-Ch2-Clarifying-Priorities.pdf",
+  },
+  {
+    number: "03",
+    title: "Building Rhythm Without Overhead",
+    body: "Status updates and governance layers rarely make delivery faster. This chapter covers what does — lightweight structures that teams will actually use.",
+    file: "notes-from-the-whiteboard-ch3.pdf",
+    filename: "Notes-from-the-Whiteboard-Ch3-Building-Rhythm.pdf",
+  },
 ];
 
 export default function Ebook() {
   const fade1 = useScrollFade();
   const fade2 = useScrollFade();
-  const fade3 = useScrollFade();
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email.trim()) return;
-    setLoading(true);
-    setError("");
-    try {
-      const { error: dbError } = await supabase
-        .from("ebook_signups")
-        .insert({ email: email.trim().toLowerCase() });
-      if (dbError) {
-        if (dbError.code === "23505") {
-          // Already signed up — treat as success
-          setSubmitted(true);
-        } else {
-          setError("Something went wrong. Please try again.");
-        }
-      } else {
-        setSubmitted(true);
-      }
-    } catch {
-      setError("Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <>
       {/* Hero */}
       <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>
-        <div className="max-w-site mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div>
-            <span
-              className="inline-block px-3 py-1 text-[11px] font-body font-semibold uppercase tracking-[0.15em] mb-6"
-              style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
-            >
-              Three chapters available now
-            </span>
-            <h1 className="font-head text-[56px] md:text-[96px] uppercase leading-[0.92] mb-4" style={{ color: "var(--col-white)" }}>
-              Notes
-              <br />
-              From The
-              <br />
-              Whiteboard
-            </h1>
-            <p className="font-head text-[20px] md:text-[24px] uppercase mb-8" style={{ color: "var(--col-primary)", lineHeight: 1.1 }}>
-              Standalone chapters for leaders & change-drivers in complex organisations
-            </p>
-            <p className="font-body text-[17px] leading-relaxed mb-10 max-w-[50ch]" style={{ color: "rgba(247,246,245,0.6)" }}>
-              Not a handbook. Not consultant-speak. Just what I've seen, tried, and learned over 20+ years inside complex organisations. Written for people who do the work.
-            </p>
-
-            {/* Sign-up form */}
-            {!submitted ? (
-              <div>
-                <p className="font-body text-[14px] mb-3" style={{ color: "rgba(247,246,245,0.5)" }}>
-                  Sign up to get all three available chapters as free PDFs. Download each one independently.
-                </p>
-                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-[480px]">
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Your email"
-                    className="flex-1 px-4 py-3 text-[14px] font-body outline-none"
-                    style={{
-                      backgroundColor: "rgba(247,246,245,0.08)",
-                      color: "var(--col-white)",
-                      border: "1px solid rgba(197,195,198,0.15)",
-                    }}
-                  />
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 shrink-0 disabled:opacity-50"
-                    style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
-                  >
-                    {loading ? "Signing up…" : "Get all three chapters free"}
-                  </button>
-                </form>
-                {error && (
-                  <p className="font-body text-[13px] mt-2" style={{ color: "#e55" }}>{error}</p>
-                )}
-              </div>
-            ) : (
-              <div className="max-w-[480px] space-y-4">
-                <div className="px-4 py-3" style={{ backgroundColor: "rgba(197,195,198,0.08)", border: "1px solid rgba(197,195,198,0.15)" }}>
-                  <p className="font-body text-[15px] mb-3" style={{ color: "var(--col-white)" }}>
-                    ✓ You're in. Download each chapter below.
-
-                  </p>
-                  <div className="flex flex-col gap-2">
-                    {chapters.filter(ch => ch.available).map(ch => (
-                      <a
-                        key={ch.number}
-                        href={ch.pdfUrl}
-                        download={ch.pdfFilename}
-                        className="inline-block px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 text-center"
-                        style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
-                      >
-                        ↓ Chapter {ch.number}: {ch.title} (PDF)
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Book cover */}
-          <div className="relative p-[44px] md:p-[52px] flex flex-col justify-between overflow-hidden min-h-[450px]" style={{ backgroundColor: "#0a0a0a" }}>
-            <span className="block text-[10px] font-body font-semibold uppercase tracking-[0.2em]" style={{ color: "rgba(197,195,198,0.3)" }}>
-              Chapters one, two & three out now
-            </span>
-            <h3 className="font-head text-[52px] md:text-[64px] uppercase leading-none my-auto" style={{ color: "var(--col-white)" }}>
-              Notes
-              <br />
-              From The
-              <br />
-              Whiteboard
-            </h3>
-            <p className="text-[12px] font-body" style={{ color: "rgba(197,195,198,0.4)" }}>
-              Stefan Eskam
-            </p>
-            <div className="absolute -bottom-16 -right-16 w-48 h-48 rounded-full" style={{ border: "1px solid rgba(197,195,198,0.06)" }} />
-            <div className="absolute -bottom-8 -right-8 w-32 h-32 rounded-full" style={{ border: "1px solid rgba(197,195,198,0.06)" }} />
-          </div>
-        </div>
-      </section>
-
-      {/* What's inside */}
-      <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-bg)" }}>
-        <div className="max-w-site mx-auto" ref={fade1.ref}>
-          <div className={fade1.className}>
-            <span className="eyebrow block mb-6">Six standalone chapters</span>
-            <p className="font-body text-[17px] leading-relaxed mb-12 max-w-[60ch]" style={{ color: "var(--col-secondary)" }}>
-              Each chapter follows the same structure: a concrete situation from practice → the problem behind the problem → what the theory says → what I did → what happened → what I'd do differently → a question for the reader.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ backgroundColor: "var(--col-primary)" }}>
-              {chapters.map((ch) => (
-                <div key={ch.title} className="p-8 relative" style={{ backgroundColor: "var(--col-bg)" }}>
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="block text-[11px] font-body font-semibold uppercase tracking-[0.15em]" style={{ color: "var(--col-accent)" }}>
-                      Chapter {ch.number}
-                    </span>
-                    {"available" in ch && (
-                      <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] px-2 py-0.5" style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}>
-                        Available
-                      </span>
-                    )}
-                  </div>
-                  <h3 className="font-head text-[22px] uppercase mb-4" style={{ color: "var(--col-text)" }}>{ch.title}</h3>
-                  <p className="font-body text-[14px] leading-relaxed" style={{ color: "var(--col-secondary)" }}>{ch.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Who it's for */}
-      <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>
-        <div className="max-w-site mx-auto max-w-[700px]" ref={fade2.ref}>
-          <div className={fade2.className}>
-            <span className="eyebrow block mb-6" style={{ color: "var(--col-primary)" }}>Who it's for</span>
-            <div className="space-y-6">
-              {readers.map((r, i) => (
-                <div key={i} className="flex gap-3">
-                  <span className="shrink-0" style={{ color: "var(--col-accent)" }}>→</span>
-                  <p className="font-body text-[16px] leading-relaxed" style={{ color: "rgba(197,195,198,0.7)" }}>{r}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Author note */}
-      <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-bg)" }}>
-        <div className="max-w-site mx-auto" ref={fade3.ref}>
-          <div className={`${fade3.className} grid grid-cols-1 md:grid-cols-2 gap-16 items-start`}>
-            <div>
-              <div className="w-24 h-24 mb-6 overflow-hidden">
-                <img src={stefanAuthor} alt="Stefan Eskam" className="w-full h-full object-cover" />
-              </div>
-              <p className="font-body text-[15px] leading-relaxed" style={{ color: "var(--col-secondary)" }}>
-                Stefan Eskam is a senior change and delivery leader with over twenty years of experience in financial services, MedTech, and large-scale product organisations. He lives and works in Copenhagen.
-              </p>
-            </div>
-            <div>
-              <p className="font-head text-[28px] md:text-[36px] uppercase leading-[0.95]" style={{ color: "var(--col-text)" }}>
-                "I'm missing honest accounts from people who've been in it. Not frameworks. Not success stories without scars. Something that looks like reality."
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Sign-up CTA */}
-      <section className="py-20 md:py-24 px-6 md:px-10" style={{ backgroundColor: "var(--col-accent)" }}>
-        <div className="max-w-site mx-auto text-center">
-          <h2 className="font-head text-[48px] md:text-[72px] uppercase leading-[0.92] mb-4" style={{ color: "var(--col-white)" }}>
-            Get the chapters.
-          </h2>
-          <p className="font-body text-[16px] mb-8 max-w-[45ch] mx-auto" style={{ color: "rgba(247,246,245,0.6)" }}>
-            Sign up and download the three available chapters for free — each one on its own.
+        <div className="max-w-site mx-auto">
+          <span className="eyebrow block mb-6" style={{ color: "var(--col-primary)" }}>
+            Free ebook
+          </span>
+          <h1
+            className="font-head text-[56px] md:text-[96px] uppercase leading-[0.92] mb-8"
+            style={{ color: "var(--col-white)" }}
+          >
+            Notes
+            <br />
+            From The
+            <br />
+            Whiteboard
+          </h1>
+          <p
+            className="font-body text-[17px] md:text-[20px] leading-relaxed max-w-[60ch]"
+            style={{ color: "rgba(247,246,245,0.65)" }}
+          >
+            Three chapters on what actually works inside complex organisations. No theory.
+            No framework introductions. Just what I have seen, tried, and found to be true.
           </p>
+        </div>
+      </section>
 
-          {!submitted ? (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-[440px] mx-auto">
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email"
-                className="flex-1 px-4 py-3 text-[14px] font-body outline-none"
-                style={{
-                  backgroundColor: "rgba(247,246,245,0.12)",
-                  color: "var(--col-white)",
-                  border: "1px solid rgba(247,246,245,0.2)",
-                }}
-              />
-              <button
-                type="submit"
-                disabled={loading}
-                className="px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 shrink-0 disabled:opacity-50"
-                style={{ backgroundColor: "var(--col-text)", color: "var(--col-white)" }}
+      {/* Chapters */}
+      <section className="py-20 md:py-28 px-6 md:px-10" style={{ backgroundColor: "var(--col-bg)" }}>
+        <div className="max-w-site mx-auto" ref={fade1.ref}>
+          <div className={`${fade1.className} flex flex-col gap-px`} style={{ backgroundColor: "var(--col-primary)" }}>
+            {chapters.map((ch) => (
+              <div
+                key={ch.number}
+                className="p-8 md:p-12 grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-8 md:gap-12 items-start md:items-center"
+                style={{ backgroundColor: "var(--col-bg)" }}
               >
-                {loading ? "Signing up…" : "Sign up"}
-              </button>
-            </form>
-          ) : (
-            <div className="space-y-4">
-              <p className="font-body text-[16px]" style={{ color: "var(--col-white)" }}>
-                ✓ You're in. Download each chapter below.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center flex-wrap">
-                {chapters.filter(ch => ch.available).map((ch) => (
-                  <a
-                    key={ch.number}
-                    href={ch.pdfUrl}
-                    download={ch.pdfFilename}
-                    className="inline-block px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90"
-                    style={{ backgroundColor: "var(--col-text)", color: "var(--col-white)" }}
+                <span
+                  className="font-head text-[64px] md:text-[88px] leading-none"
+                  style={{ color: "var(--col-accent)" }}
+                >
+                  {ch.number}
+                </span>
+                <div>
+                  <h2
+                    className="font-head text-[26px] md:text-[34px] uppercase leading-tight mb-3"
+                    style={{ color: "var(--col-text)" }}
                   >
-                    ↓ Chapter {ch.number} — free PDF
-                  </a>
-                ))}
+                    {ch.title}
+                  </h2>
+                  <p
+                    className="font-body text-[15px] md:text-[16px] leading-relaxed max-w-[60ch]"
+                    style={{ color: "var(--col-secondary)" }}
+                  >
+                    {ch.body}
+                  </p>
+                </div>
+                <a
+                  href={`${STORAGE_BASE}/${ch.file}`}
+                  download={ch.filename}
+                  className="inline-block px-6 py-4 text-[12px] font-body font-semibold uppercase tracking-[0.12em] transition-opacity hover:opacity-90 text-center shrink-0"
+                  style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
+                >
+                  ↓ Download Chapter {ch.number} — Free PDF
+                </a>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            </div>
-          )}
+      {/* CTA */}
+      <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-accent)" }}>
+        <div className="max-w-site mx-auto text-center" ref={fade2.ref}>
+          <div className={fade2.className}>
+            <h2
+              className="font-head text-[36px] md:text-[56px] uppercase leading-[1] mb-8 max-w-[24ch] mx-auto"
+              style={{ color: "var(--col-white)" }}
+            >
+              If this is the kind of thinking you need on your next programme, let's talk.
+            </h2>
+            <Button variant="default" asChild>
+              <Link to="/contact">Get in touch</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </>
