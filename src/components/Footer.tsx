@@ -4,6 +4,7 @@ const footerNav = [
   { label: "About", to: "/about" },
   { label: "How I Work", to: "/how-i-work" },
   { label: "Writing", to: "/writing" },
+  { label: "Ebook", to: "/ebook" },
   { label: "Contact", to: "/contact" },
 ];
 
