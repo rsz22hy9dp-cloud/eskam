@@ -34,36 +34,50 @@ function Hero() {
           </span>
         </div>
 
-        {/* Headline */}
-        <h1 className="hero-animate hero-animate-2 font-head uppercase text-[48px] sm:text-[72px] md:text-[96px] lg:text-[120px] leading-[0.92] tracking-tight mb-8">
-          <span style={{ color: "var(--col-white)" }}>Strategy</span>
-          <br />
-          <span style={{ color: "var(--col-white)" }}>doesn't</span>
-          <br />
-          <span style={{ color: "var(--col-white)" }}>stall.</span>
-          <br />
-          <span style={{ color: "var(--col-primary)" }}>Execution</span>
-          <br />
-          <span style={{ color: "var(--col-white)" }}>does.</span>
-        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 md:gap-16 items-center">
+          <div>
+            {/* Headline */}
+            <h1 className="hero-animate hero-animate-2 font-head uppercase text-[48px] sm:text-[72px] md:text-[88px] lg:text-[110px] leading-[0.92] tracking-tight mb-8">
+              <span style={{ color: "var(--col-white)" }}>Strategy</span>
+              <br />
+              <span style={{ color: "var(--col-white)" }}>doesn't</span>
+              <br />
+              <span style={{ color: "var(--col-white)" }}>stall.</span>
+              <br />
+              <span style={{ color: "var(--col-primary)" }}>Execution</span>
+              <br />
+              <span style={{ color: "var(--col-white)" }}>does.</span>
+            </h1>
 
-        {/* Subheadline */}
-        <p
-          className="hero-animate hero-animate-3 font-body text-[16px] md:text-[18px] max-w-[50ch] mb-10"
-          style={{ color: "rgba(247,246,245,0.6)" }}>
-          
-          Stefan Eskam helps senior leaders in complex organisations close the gap
-          between decision and delivery, without adding governance overhead.
-        </p>
+            {/* Subheadline */}
+            <p
+              className="hero-animate hero-animate-3 font-body text-[16px] md:text-[18px] max-w-[50ch] mb-10"
+              style={{ color: "rgba(247,246,245,0.6)" }}>
 
-        {/* CTAs */}
-        <div className="hero-animate hero-animate-4 flex flex-wrap gap-4">
-          <Button variant="primary" asChild>
-            <Link to="/contact">Let's talk</Link>
-          </Button>
-          <Button variant="ghost" asChild>
-            <Link to="/how-i-work">How I work</Link>
-          </Button>
+              Stefan Eskam helps senior leaders in complex organisations close the gap
+              between decision and delivery, without adding governance overhead.
+            </p>
+
+            {/* CTAs */}
+            <div className="hero-animate hero-animate-4 flex flex-col sm:flex-row flex-wrap gap-4 items-start">
+              <Button variant="primary" asChild>
+                <Link to="/contact">Let's talk</Link>
+              </Button>
+              <Button variant="ghost" asChild>
+                <Link to="/how-i-work">How I work</Link>
+              </Button>
+            </div>
+          </div>
+
+          {/* Photo */}
+          <div className="hero-animate hero-animate-3 flex justify-center md:justify-end shrink-0">
+            <img
+              src={stefanHeadshot}
+              alt="Stefan Eskam"
+              className="w-[220px] md:w-[280px] lg:w-[320px] object-cover rounded-lg md:rounded-none"
+              style={{ maxHeight: "500px" }}
+            />
+          </div>
         </div>
       </div>
 
@@ -121,7 +135,7 @@ function ProblemSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2">
               {[
               { stat: "20+", label: "Years inside complex organisations, not advising from the outside" },
-              { stat: "0", label: "Frameworks sold. No methodology pitch. No engagement theatre." },
+              { stat: "0", label: "Frameworks sold — and that's deliberate." },
               { stat: "3", label: "Industries: financial services, MedTech, large-scale product" },
               { stat: "1", label: "Question that matters: does delivery actually move?" }].
               map((item) =>

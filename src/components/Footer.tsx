@@ -107,7 +107,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Stefan Eskam. All rights reserved.
           </p>
           <p className="text-[12px]" style={{ color: "rgba(197,195,198,0.2)" }}>
-            London, UK
+            Copenhagen, Denmark
           </p>
         </div>
       </div>
