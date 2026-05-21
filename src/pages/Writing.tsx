@@ -167,43 +167,6 @@ export default function Writing() {
           </div>
         </div>
       </section>
-
-            </h2>
-            <p
-              className="font-body text-[17px] mb-10"
-              style={{ color: "var(--col-secondary)" }}
-            >
-              Sign up below to receive all three chapters.
-            </p>
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-[480px] mx-auto">
-              <input
-                type="email"
-                required
-                placeholder="Your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 px-4 py-[10px] font-body text-[14px] outline-none"
-                style={{
-                  backgroundColor: "var(--col-white)",
-                  color: "var(--col-text)",
-                  border: "1px solid var(--col-primary)",
-                }}
-              />
-              <button
-                type="submit"
-                disabled={loading}
-                className="px-[22px] py-[10px] font-body text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors duration-200"
-                style={{
-                  backgroundColor: "var(--col-text)",
-                  color: "var(--col-white)",
-                }}
-              >
-                {loading ? "..." : "Get all three chapters"}
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
