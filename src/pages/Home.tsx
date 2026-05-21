@@ -469,7 +469,7 @@ function LogosSection() {
                 src={l.src}
                 alt={l.alt}
                 className="object-contain"
-                style={{ height: "48px", filter: "brightness(0) invert(1)", opacity: 0.85 }}
+                style={{ height: "48px", opacity: 0.9 }}
               />
             ))}
           </div>
