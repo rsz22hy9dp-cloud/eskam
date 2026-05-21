@@ -121,7 +121,7 @@ function ProblemSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2">
               {[
               { stat: "20+", label: "Years inside complex organisations, not advising from the outside" },
-              { stat: "0", label: "Frameworks sold. No methodology pitch. No engagement theatre." },
+              { stat: "0", label: "Frameworks sold — and that's deliberate." },
               { stat: "3", label: "Industries: financial services, MedTech, large-scale product" },
               { stat: "1", label: "Question that matters: does delivery actually move?" }].
               map((item) =>
