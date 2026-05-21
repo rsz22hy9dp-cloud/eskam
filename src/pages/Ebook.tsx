@@ -68,7 +68,7 @@ export default function Ebook() {
               className="inline-block px-3 py-1 text-[11px] font-body font-semibold uppercase tracking-[0.15em] mb-6"
               style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
             >
-              Two chapters available now
+              Three chapters available now
             </span>
             <h1 className="font-head text-[56px] md:text-[96px] uppercase leading-[0.92] mb-4" style={{ color: "var(--col-white)" }}>
               Notes
@@ -88,7 +88,7 @@ export default function Ebook() {
             {!submitted ? (
               <div>
                 <p className="font-body text-[14px] mb-3" style={{ color: "rgba(247,246,245,0.5)" }}>
-                  Sign up to get the available chapters as free PDFs.
+                  Sign up to get all three available chapters as free PDFs. Download each one independently.
                 </p>
                 <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-[480px]">
                   <input
@@ -110,7 +110,7 @@ export default function Ebook() {
                     className="px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90 shrink-0 disabled:opacity-50"
                     style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
                   >
-                    {loading ? "Signing up…" : "Get both chapters free"}
+                    {loading ? "Signing up…" : "Get all three chapters free"}
                   </button>
                 </form>
                 {error && (
@@ -121,7 +121,8 @@ export default function Ebook() {
               <div className="max-w-[480px] space-y-4">
                 <div className="px-4 py-3" style={{ backgroundColor: "rgba(197,195,198,0.08)", border: "1px solid rgba(197,195,198,0.15)" }}>
                   <p className="font-body text-[15px] mb-3" style={{ color: "var(--col-white)" }}>
-                    ✓ You're in. Download your free chapters below.
+                    ✓ You're in. Download each chapter below.
+
                   </p>
                   <div className="flex flex-col gap-2">
                     {chapters.filter(ch => ch.available).map(ch => (
@@ -144,7 +145,7 @@ export default function Ebook() {
           {/* Book cover */}
           <div className="relative p-[44px] md:p-[52px] flex flex-col justify-between overflow-hidden min-h-[450px]" style={{ backgroundColor: "#0a0a0a" }}>
             <span className="block text-[10px] font-body font-semibold uppercase tracking-[0.2em]" style={{ color: "rgba(197,195,198,0.3)" }}>
-              Chapters one & two out now
+              Chapters one, two & three out now
             </span>
             <h3 className="font-head text-[52px] md:text-[64px] uppercase leading-none my-auto" style={{ color: "var(--col-white)" }}>
               Notes
@@ -237,8 +238,9 @@ export default function Ebook() {
             Get the chapters.
           </h2>
           <p className="font-body text-[16px] mb-8 max-w-[45ch] mx-auto" style={{ color: "rgba(247,246,245,0.6)" }}>
-            Sign up and download both available chapters for free.
+            Sign up and download the three available chapters for free — each one on its own.
           </p>
+
           {!submitted ? (
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-[440px] mx-auto">
               <input
@@ -266,10 +268,10 @@ export default function Ebook() {
           ) : (
             <div className="space-y-4">
               <p className="font-body text-[16px]" style={{ color: "var(--col-white)" }}>
-                ✓ You're in. Download your free chapters below.
+                ✓ You're in. Download each chapter below.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                {chapters.filter(ch => ch.available).map((ch, idx) => (
+              <div className="flex flex-col sm:flex-row gap-3 justify-center flex-wrap">
+                {chapters.filter(ch => ch.available).map((ch) => (
                   <a
                     key={ch.number}
                     href={ch.pdfUrl}
@@ -277,10 +279,11 @@ export default function Ebook() {
                     className="inline-block px-6 py-3 text-[13px] font-body font-semibold uppercase tracking-[0.08em] transition-opacity hover:opacity-90"
                     style={{ backgroundColor: "var(--col-text)", color: "var(--col-white)" }}
                   >
-                    ↓ {idx === 0 ? "Get the first two chapters - free PDF" : `Chapter ${ch.number} - free PDF`}
+                    ↓ Chapter {ch.number} — free PDF
                   </a>
                 ))}
               </div>
+
             </div>
           )}
         </div>
