@@ -371,18 +371,12 @@ function EbookTease() {
           {/* Left */}
           <div>
             <span className="eyebrow block mb-6">Practical writing</span>
-            <span
-              className="inline-block px-3 py-1 text-[11px] font-body font-semibold uppercase tracking-[0.15em] mb-4"
-              style={{ backgroundColor: "var(--col-accent)", color: "var(--col-white)" }}
-            >
-              Coming 2026
-            </span>
             <h2 className="font-head text-[48px] md:text-[72px] uppercase leading-[0.92] mb-8" style={{ color: "var(--col-text)" }}>
               The ebook
             </h2>
             <div className="font-body text-[17px] leading-relaxed space-y-6 mb-10" style={{ color: "var(--col-secondary)" }}>
               <p>
-                Not a handbook. Not consultant-speak. Six standalone chapters on what actually
+                Not a handbook. Not consultant-speak. Three standalone chapters on what actually
                 works inside complex organisations — written for people who do the work, not
                 people who study it.
               </p>
@@ -400,7 +394,7 @@ function EbookTease() {
             style={{ backgroundColor: "var(--col-text)" }}>
             
             <span className="block text-[10px] font-body font-semibold uppercase tracking-[0.2em]" style={{ color: "rgba(197,195,198,0.3)" }}>
-              Coming 2026
+              Notes from the whiteboard
             </span>
             <h3 className="font-head text-[48px] md:text-[52px] uppercase leading-none my-auto" style={{ color: "var(--col-white)" }}>
               Notes
