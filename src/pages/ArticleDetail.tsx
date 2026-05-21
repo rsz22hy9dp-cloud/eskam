@@ -27,16 +27,12 @@ export default function ArticleDetail() {
         </Link>
       </div>
 
-      <div className="max-w-site mx-auto mb-12 md:mb-16">
+      <div className="max-w-[68ch] mx-auto">
         <img
           src={article.image}
           alt=""
-          className="w-full max-h-[500px] object-contain"
-          style={{ backgroundColor: "var(--col-bg)" }}
+          className="block mx-auto w-full max-w-[400px] h-auto mb-12"
         />
-      </div>
-
-      <div className="max-w-[68ch] mx-auto">
         <p
           className="font-body text-[11px] uppercase tracking-[0.15em] mb-4"
           style={{ color: "rgba(26,26,26,0.55)" }}
