@@ -469,7 +469,11 @@ function LogosSection() {
                 src={l.src}
                 alt={l.alt}
                 className="object-contain"
-                style={{ height: "48px", opacity: 0.9 }}
+                style={{
+                  height: "48px",
+                  opacity: 0.9,
+                  mixBlendMode: l.alt === "Danske Bank" ? "screen" : undefined,
+                }}
               />
             ))}
           </div>
