@@ -6,6 +6,16 @@ import stefanHeadshot from "@/assets/stefan-headshot.jpeg";
 import logoDanske from "@/assets/logo-danske-bank.png";
 import logoSdc from "@/assets/logo-sdc.png";
 import logo3shape from "@/assets/logo-3shape.png";
+import stefanTeaching1 from "@/assets/stefan-teaching-1.jpeg";
+import stefanTeaching2 from "@/assets/stefan-teaching-2.jpeg";
+
+function FullBleedImage({ src, alt }: { src: string; alt: string }) {
+  return (
+    <section className="w-full">
+      <img src={src} alt={alt} className="block w-full" style={{ height: "480px", objectFit: "cover", objectPosition: "center" }} />
+    </section>
+  );
+}
 
 function Hero() {
   return (
@@ -506,7 +516,9 @@ export default function Home() {
       <Hero />
       <ProblemSection />
       <WhatIDoSection />
+      <FullBleedImage src={stefanTeaching1} alt="Stefan teaching a workshop" />
       <WhoSection />
+      <FullBleedImage src={stefanTeaching2} alt="Stefan facilitating a session" />
       <LogosSection />
       <TestimonialSection />
       <ExperienceStrip />

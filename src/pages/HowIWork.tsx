@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
 import stefanWhiteboard from "@/assets/stefan-whiteboard.jpeg";
+import stefanWorkshop1 from "@/assets/stefan-workshop-1.jpeg";
 
 const phases = [
   {
@@ -105,6 +106,16 @@ export default function HowIWork() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Full-bleed action photo */}
+      <section className="w-full">
+        <img
+          src={stefanWorkshop1}
+          alt="Workshop in action"
+          className="block w-full"
+          style={{ height: "480px", objectFit: "cover", objectPosition: "center" }}
+        />
       </section>
 
       {/* SECTION 3 — What I do not do */}
