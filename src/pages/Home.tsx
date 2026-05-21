@@ -453,9 +453,9 @@ function CTABand() {
 function LogosSection() {
   const fade = useScrollFade();
   const logos = [
-    { src: logoDanske, alt: "Danske Bank" },
-    { src: logoSdc, alt: "SDC" },
-    { src: logo3shape, alt: "3Shape" },
+    { src: logoDanske, alt: "Danske Bank", height: 32 },
+    { src: logoSdc, alt: "SDC", height: 40 },
+    { src: logo3shape, alt: "3Shape", height: 36 },
   ];
   return (
     <section className="py-20 md:py-28 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>
