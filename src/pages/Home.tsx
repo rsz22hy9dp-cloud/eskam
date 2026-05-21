@@ -439,6 +439,60 @@ function CTABand() {
 
 }
 
+function LogosSection() {
+  const fade = useScrollFade();
+  const logos = [
+    { src: logoDanske, alt: "Danske Bank" },
+    { src: logoSdc, alt: "SDC" },
+    { src: logo3shape, alt: "3Shape" },
+  ];
+  return (
+    <section className="py-20 md:py-28 px-6 md:px-10" style={{ backgroundColor: "var(--col-bg)" }}>
+      <div className="max-w-site mx-auto" ref={fade.ref}>
+        <div className={fade.className}>
+          <span className="eyebrow block mb-12 text-center">Organisations I've worked with</span>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
+            {logos.map((l) => (
+              <img
+                key={l.alt}
+                src={l.src}
+                alt={l.alt}
+                className="object-contain"
+                style={{ height: "120px", filter: "grayscale(100%)", opacity: 0.75 }}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialSection() {
+  const fade = useScrollFade();
+  return (
+    <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>
+      <div className="max-w-site mx-auto text-center" ref={fade.ref}>
+        <div className={fade.className}>
+          <span className="eyebrow block mb-10" style={{ color: "var(--col-primary)" }}>What people say</span>
+          <blockquote
+            className="font-head uppercase mx-auto max-w-[26ch] text-[32px] md:text-[52px] leading-[1.05] mb-10"
+            style={{ color: "var(--col-white)" }}
+          >
+            "Stefan without doubt is the best manager I've ever had. Experienced and knowledgeable, always helping people to make their own discoveries of ideas. No micro management, absolute trust, belief and lots stunning jokes."
+          </blockquote>
+          <p className="font-body text-[13px] font-semibold uppercase tracking-[0.15em]" style={{ color: "var(--col-accent)" }}>
+            Violeta Valantinavičienė
+          </p>
+          <p className="font-body text-[12px] uppercase tracking-[0.12em] mt-1" style={{ color: "rgba(197,195,198,0.5)" }}>
+            Interim Director of Engineering, Vinted / Kleiderkreisel
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -446,9 +500,11 @@ export default function Home() {
       <ProblemSection />
       <WhatIDoSection />
       <WhoSection />
+      <LogosSection />
+      <TestimonialSection />
       <ExperienceStrip />
       <EbookTease />
       <CTABand />
-    </>);
-
+    </>
+  );
 }
