@@ -476,7 +476,7 @@ function TestimonialSection() {
         <div className={fade.className}>
           <span className="eyebrow block mb-10" style={{ color: "var(--col-primary)" }}>What people say</span>
           <blockquote
-            className="font-head uppercase mx-auto max-w-[26ch] text-[32px] md:text-[52px] leading-[1.05] mb-10"
+            className="font-body italic text-center mx-auto max-w-[38ch] text-[24px] md:text-[28px] leading-relaxed mb-10"
             style={{ color: "var(--col-white)" }}
           >
             "Stefan without doubt is the best manager I've ever had. Experienced and knowledgeable, always helping people to make their own discoveries of ideas. No micro management, absolute trust, belief and lots stunning jokes."
