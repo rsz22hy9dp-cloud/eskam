@@ -1,170 +1,122 @@
-import { useState } from "react";
 import { useScrollFade } from "@/hooks/useScrollFade";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "sonner";
+import avatar from "@/assets/character-coffee.jpeg";
+import imgPapers from "@/assets/character-holding-papers.png";
+import imgStressed from "@/assets/character-stressed.png";
+import imgComputer from "@/assets/character-computer.jpeg";
+
+const articles = [
+  {
+    image: imgPapers,
+    title: "The Plan Wasn't the Problem",
+    body: [
+      "Most plans don't fail because they were wrong. They fail because nobody defended them.",
+      "Every organisation I've worked in has a version of the same pattern. A planning session produces something coherent — priorities agreed, capacity allocated, a sequence that makes sense. Then the week starts. An urgent request lands. A senior stakeholder needs something by Friday. Someone's pulled onto a different piece of work. The plan isn't abandoned. It just gets quietly eroded, one reasonable exception at a time.",
+      "The plan itself was never the weak point. The boundary around it was.",
+      "What I've noticed is that the teams who actually deliver on what they committed to aren't necessarily better at planning. They're better at saying no to things that aren't the plan. Not aggressively. Not with a long explanation. Just clearly, and early, before the exception becomes the norm.",
+      "That boundary doesn't protect itself. Someone has to hold it. And in most organisations, that role is either unclear, unpopular, or both.",
+      "The question worth asking isn't whether your plan was realistic. It's who's responsible for keeping it that way once the real world turns up.",
+    ],
+  },
+  {
+    image: imgStressed,
+    title: "You Don't Change Behaviour by Explaining It",
+    body: [
+      "Most change efforts spend a lot of time on the why. The why is rarely the problem.",
+      "People in complex organisations are not, in my experience, resistant to change because they don't understand it. They're resistant because the new way of working asks them to behave differently inside a system that still rewards the old way. The incentives haven't moved. The inherited habits — how decisions actually get made, whose opinion carries weight, what gets you into trouble — those remain largely intact.",
+      "I've watched organisations run workshops, publish principles, redesign org charts, and still arrive at roughly the same place two years later. Not because people weren't trying. Because the surrounding context made the old behaviour the path of least resistance.",
+      "What actually shifts things is narrower and less satisfying than most change programmes assume. It's a manager who consistently models the new behaviour under pressure. A process change that makes the old way genuinely harder. A decision made visibly differently, once, in a meeting that mattered.",
+      "Small, but real. Not explained. Done.",
+      "Behaviour follows consequence. It always has. The question is whether the consequences in your organisation are pointing in the direction you think they are.",
+    ],
+  },
+  {
+    image: imgComputer,
+    title: "The Gap Has a Name",
+    body: [
+      "After twenty years working across complex organisations, the thing I keep returning to isn't strategy, and it isn't execution. It's the gap between them, and the fact that most organisations have learned to live in it rather than close it.",
+      "Strategy meetings produce clarity. Or something that feels like clarity. Priorities are set. Direction is agreed. Everyone leaves the room with broadly the same understanding. Then the work begins, and the distance between what was decided and what actually happens starts to grow. Not dramatically. Gradually. Through a hundred small translations, assumptions, and handoffs that nobody fully tracks.",
+      "The gap isn't a communication failure, though that's usually what gets blamed. It's structural. The people setting direction are rarely the people absorbing the consequences of that direction in practice. Feedback travels slowly, if it travels at all. The system keeps producing results that surprise the people who designed it.",
+      "What I've found useful isn't a new framework. It's proximity. Leaders who spend time at the point where strategy meets delivery — not to supervise, but to understand — tend to make better decisions and catch misalignments before they become expensive.",
+      "The gap doesn't close because you communicate more. It closes because someone decides to stand in it.",
+    ],
+  },
+];
+
+function Article({ image, title, body }: typeof articles[number]) {
+  const fade = useScrollFade();
+  return (
+    <article ref={fade.ref} className={fade.className}>
+      <img
+        src={image}
+        alt=""
+        className="w-full h-[320px] md:h-[520px] object-cover mb-12"
+      />
+      <div className="max-w-[68ch] mx-auto">
+        <h2
+          className="font-head text-[36px] md:text-[56px] uppercase leading-[0.95] mb-8"
+          style={{ color: "var(--col-text)" }}
+        >
+          {title}
+        </h2>
+        <div className="space-y-6">
+          {body.map((p, i) => (
+            <p
+              key={i}
+              className="font-body text-[17px] leading-relaxed"
+              style={{ color: "var(--col-text)" }}
+            >
+              {p}
+            </p>
+          ))}
+        </div>
+      </div>
+    </article>
+  );
+}
 
 export default function Writing() {
-  const fade = useScrollFade();
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setLoading(true);
-    try {
-      const { error } = await supabase
-        .from("ebook_signups")
-        .insert({ email });
-      if (error) {
-        if (error.code === "23505") {
-          toast.info("You are already signed up.");
-        } else {
-          throw error;
-        }
-      } else {
-        toast.success("You are on the list. All three chapters are coming.");
-        setEmail("");
-      }
-    } catch {
-      toast.error("Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <>
-      {/* SECTION 1 — Hero */}
-      <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>
+      {/* Hero */}
+      <section
+        className="py-24 md:py-32 px-6 md:px-10"
+        style={{ backgroundColor: "var(--col-text)" }}
+      >
         <div className="max-w-site mx-auto">
           <span className="eyebrow block mb-6" style={{ color: "var(--col-primary)" }}>
-            Practical writing
+            Writing
           </span>
           <h1
-            className="font-head text-[48px] md:text-[96px] uppercase leading-[0.92] mb-6"
+            className="font-head text-[48px] md:text-[96px] uppercase leading-[0.92] mb-8"
             style={{ color: "var(--col-white)" }}
           >
-            Notes from
-            <br />
-            the whiteboard
+            Writing
           </h1>
           <p
-            className="font-body text-[17px] leading-relaxed max-w-[58ch]"
-            style={{ color: "rgba(247,246,245,0.6)" }}
+            className="font-body text-[17px] leading-relaxed max-w-[58ch] mb-12"
+            style={{ color: "rgba(247,246,245,0.7)" }}
           >
-            What I have learned inside complex organisations — written for people who are in the
-            same rooms, dealing with the same problems. No theory. No framework introductions.
-            Just what I have seen, tried, and found to be true.
+            Observations from twenty years working across complex organisations. No
+            frameworks. No conclusions. Just things I've noticed that turned out to matter.
           </p>
+          <img
+            src={avatar}
+            alt="Stefan Eskam"
+            className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover"
+            style={{ border: "1px solid rgba(247,246,245,0.2)" }}
+          />
         </div>
       </section>
 
-      {/* SECTION 2 — What to expect */}
-      <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-bg)" }}>
-        <div className="max-w-site mx-auto" ref={fade.ref}>
-          <div className={fade.className}>
-            <span className="eyebrow block mb-6">What to expect</span>
-            <h2
-              className="font-head text-[40px] md:text-[56px] uppercase leading-[0.92] mb-12"
-              style={{ color: "var(--col-text)" }}
-            >
-              Inside the first three chapters
-            </h2>
-            <div
-              className="grid grid-cols-1 md:grid-cols-3 gap-px mb-20"
-              style={{ backgroundColor: "var(--col-primary)" }}
-            >
-              {[
-                {
-                  num: "01",
-                  title: "Why Delivery Stalls",
-                  body: "Most programmes don't fail because of poor planning. They fail because no one owns the gap between the decision and the work.",
-                },
-                {
-                  num: "02",
-                  title: "Clarifying Priorities at Speed",
-                  body: "When everything is a priority, nothing moves. This chapter is about how to have the conversation that cuts through it — without losing the room.",
-                },
-                {
-                  num: "03",
-                  title: "Building Rhythm Without Overhead",
-                  body: "Status updates, governance layers, and weekly reporting rarely make delivery faster. Here's what does.",
-                },
-              ].map((c) => (
-                <div
-                  key={c.num}
-                  className="p-8 md:p-10"
-                  style={{ backgroundColor: "var(--col-bg)" }}
-                >
-                  <span
-                    className="font-head text-[64px] leading-none block mb-4 select-none"
-                    style={{
-                      color: "transparent",
-                      WebkitTextStroke: "1px rgba(26,26,26,0.25)",
-                    }}
-                  >
-                    {c.num}
-                  </span>
-                  <h3
-                    className="font-head text-[22px] uppercase leading-[0.95] mb-4"
-                    style={{ color: "var(--col-text)" }}
-                  >
-                    {c.title}
-                  </h3>
-                  <p
-                    className="font-body text-[15px] leading-relaxed"
-                    style={{ color: "var(--col-secondary)" }}
-                  >
-                    {c.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="max-w-[600px] mx-auto text-center">
-              <h2
-                className="font-head text-[40px] md:text-[56px] uppercase leading-[0.92] mb-6"
-                style={{ color: "var(--col-text)" }}
-              >
-                The first three chapters
-                <br />
-                are here
-              </h2>
-              <p
-                className="font-body text-[17px] mb-10"
-                style={{ color: "var(--col-secondary)" }}
-              >
-                Sign up below to receive all three chapters.
-              </p>
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-[480px] mx-auto">
-                <input
-                  type="email"
-                  required
-                  placeholder="Your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-4 py-[10px] font-body text-[14px] outline-none"
-                  style={{
-                    backgroundColor: "var(--col-white)",
-                    color: "var(--col-text)",
-                    border: "1px solid var(--col-primary)",
-                  }}
-                />
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="px-[22px] py-[10px] font-body text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors duration-200"
-                  style={{
-                    backgroundColor: "var(--col-text)",
-                    color: "var(--col-white)",
-                  }}
-                >
-                  {loading ? "..." : "Get all three chapters"}
-                </button>
-              </form>
-            </div>
-          </div>
+      {/* Articles */}
+      <section
+        className="py-24 md:py-32 px-6 md:px-10"
+        style={{ backgroundColor: "var(--col-bg)" }}
+      >
+        <div className="max-w-site mx-auto space-y-32 md:space-y-48">
+          {articles.map((a) => (
+            <Article key={a.title} {...a} />
+          ))}
         </div>
       </section>
     </>
