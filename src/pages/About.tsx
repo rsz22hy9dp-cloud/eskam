@@ -7,17 +7,17 @@ const career = [
   {
     org: "Danske Bank",
     period: "2002–2021",
-    body: "Nineteen years. Multiple roles with increasing scope: Agile Coach, Business Analyst, Tribe Coach, People Manager. Delivery in one of the most regulated financial institutions in the Nordics. Learned what happens when strategy and execution lose contact — and how to reconnect them.",
+    body: "Nineteen years across delivery, analysis, and people leadership inside one of the most regulated financial institutions in the Nordics. Carried programmes that couldn't afford to fail. Learned where strategy and execution lose contact — and how to reconnect them fast.",
   },
   {
     org: "SDC",
     period: "2022–2023",
-    body: "Strengthened organisational agility in a complex, multi-customer regulated environment. Helped leadership move from abstract ambition to concrete operating principles.",
+    body: "Brought in to strengthen organisational agility in a complex, multi-customer regulated environment. Helped leadership move from abstract ambition to operating principles teams could actually use.",
   },
   {
     org: "3Shape",
     period: "2023–Present",
-    body: "Senior Agile Coach in a fast-growing product organisation. Built a quarterly planning and alignment model across multiple teams. Shifted leadership conversations from activity to outcomes.",
+    body: "Senior Agile Coach in a fast-growing product organisation. Built quarterly planning and alignment across multiple teams. Shifted leadership conversations from activity to outcomes.",
   },
 ];
 
