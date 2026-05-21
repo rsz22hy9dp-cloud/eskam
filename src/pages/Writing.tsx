@@ -85,8 +85,7 @@ export default function Writing() {
           <img
             src={avatar}
             alt="Stefan Eskam"
-            className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover"
-            style={{ border: "1px solid rgba(247,246,245,0.2)" }}
+            className="block w-full max-w-[300px] h-auto mt-8"
           />
         </div>
       </section>
