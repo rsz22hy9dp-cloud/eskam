@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
 import stefanCasual from "@/assets/stefan-casual.jpeg";
 import stefanHeadshot from "@/assets/stefan-headshot.jpeg";
-import logoDanske from "@/assets/logo-danske-bank.png";
+import logoDanske from "@/assets/logo-danske-bank.svg";
 import logoSdc from "@/assets/logo-sdc.png";
 import logo3shape from "@/assets/logo-3shape.png";
 import stefanTeaching1 from "@/assets/stefan-teaching-1.jpeg";
