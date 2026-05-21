@@ -62,13 +62,20 @@ function Hero() {
             </p>
 
             {/* CTAs */}
-            <div className="hero-animate hero-animate-4 flex flex-col sm:flex-row flex-wrap gap-4 items-start">
-              <Button variant="primary" asChild>
-                <Link to="/contact">Let's talk</Link>
-              </Button>
-              <Button variant="ghost" asChild>
-                <Link to="/how-i-work">How I work</Link>
-              </Button>
+            <div className="hero-animate hero-animate-4 flex flex-col items-start" style={{ gap: "12px" }}>
+              <Link
+                to="/contact"
+                className="cta-text inline-flex items-center justify-center px-[24px] py-[10px] w-[180px] transition-colors hover:bg-[#333333]"
+                style={{ backgroundColor: "#F5F4F0", color: "#1A1A1A" }}
+              >
+                Let's talk
+              </Link>
+              <Link
+                to="/how-i-work"
+                className="cta-text inline-flex items-center justify-center px-[24px] py-[10px] w-[180px] border border-white text-white bg-transparent transition-colors hover:bg-white hover:text-[#1A1A1A]"
+              >
+                How I work
+              </Link>
             </div>
           </div>
 
