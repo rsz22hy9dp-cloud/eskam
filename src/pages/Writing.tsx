@@ -65,28 +65,32 @@ export default function Writing() {
         className="py-24 md:py-32 px-6 md:px-10"
         style={{ backgroundColor: "var(--col-text)" }}
       >
-        <div className="max-w-site mx-auto">
-          <span className="eyebrow block mb-6" style={{ color: "var(--col-primary)" }}>
-            Writing
-          </span>
-          <h1
-            className="font-head text-[48px] md:text-[96px] uppercase leading-[0.92] mb-8"
-            style={{ color: "var(--col-white)" }}
-          >
-            Writing
-          </h1>
-          <p
-            className="font-body text-[17px] leading-relaxed max-w-[58ch] mb-12"
-            style={{ color: "rgba(247,246,245,0.7)" }}
-          >
-            Observations from twenty years working across complex organisations. No
-            frameworks. No conclusions. Just things I've noticed that turned out to matter.
-          </p>
-          <img
-            src={avatar}
-            alt="Stefan Eskam"
-            className="block w-full max-w-[300px] h-auto mt-8"
-          />
+        <div className="max-w-site mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <span className="eyebrow block mb-6" style={{ color: "var(--col-primary)" }}>
+              Writing
+            </span>
+            <h1
+              className="font-head text-[48px] md:text-[96px] uppercase leading-[0.92] mb-8"
+              style={{ color: "var(--col-white)" }}
+            >
+              Writing
+            </h1>
+            <p
+              className="font-body text-[17px] leading-relaxed max-w-[58ch]"
+              style={{ color: "rgba(247,246,245,0.7)" }}
+            >
+              Observations from twenty years working across complex organisations. No
+              frameworks. No conclusions. Just things I've noticed that turned out to matter.
+            </p>
+          </div>
+          <div className="flex justify-end items-end h-full">
+            <img
+              src={avatar}
+              alt="Stefan Eskam"
+              className="block w-full max-w-[300px] h-auto"
+            />
+          </div>
         </div>
       </section>
 
