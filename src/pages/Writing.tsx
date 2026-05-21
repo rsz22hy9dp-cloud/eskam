@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useScrollFade } from "@/hooks/useScrollFade";
-import avatar from "@/assets/character-coffee.jpeg";
+import avatar from "@/assets/character-coffee.png";
 import { articles, type Article } from "@/data/articles";
 
 function ArticleRow({ article, isLast }: { article: Article; isLast: boolean }) {
