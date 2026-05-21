@@ -23,7 +23,7 @@ export default function Writing() {
           throw error;
         }
       } else {
-        toast.success("You are on the list. Both chapters are coming.");
+        toast.success("You are on the list. All three chapters are coming.");
         setEmail("");
       }
     } catch {
@@ -68,15 +68,16 @@ export default function Writing() {
               className="font-head text-[48px] md:text-[72px] uppercase leading-[0.92] mb-6"
               style={{ color: "var(--col-text)" }}
             >
-              The first two chapters
+              The first three chapters
               <br />
               are here
+
             </h2>
             <p
               className="font-body text-[17px] mb-10"
               style={{ color: "var(--col-secondary)" }}
             >
-              Sign up below to receive both chapters.
+              Sign up below to receive all three chapters.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-[480px] mx-auto">
               <input
@@ -101,7 +102,7 @@ export default function Writing() {
                   color: "var(--col-white)",
                 }}
               >
-                {loading ? "..." : "Get both chapters"}
+                {loading ? "..." : "Get all three chapters"}
               </button>
             </form>
           </div>

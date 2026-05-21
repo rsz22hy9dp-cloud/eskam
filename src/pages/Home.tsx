@@ -355,7 +355,7 @@ function EbookTease() {
             </div>
             <div className="flex flex-wrap gap-4">
               <Button variant="default" asChild>
-                <Link to="/ebook">Get the first two chapters — free PDF</Link>
+                <Link to="/ebook">Get the first three chapters — free PDF</Link>
               </Button>
             </div>
           </div>
