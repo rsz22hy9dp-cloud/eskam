@@ -470,7 +470,8 @@ function LogosSection() {
                 alt={l.alt}
                 className="object-contain"
                 style={{
-                  height: "48px",
+                  height: l.alt === "Danske Bank" ? "96px" : "48px",
+                  width: "auto",
                   opacity: 0.9,
                   mixBlendMode: l.alt === "Danske Bank" ? "screen" : undefined,
                 }}
