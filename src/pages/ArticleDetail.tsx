@@ -31,7 +31,8 @@ export default function ArticleDetail() {
         <img
           src={article.image}
           alt=""
-          className="w-full max-h-[500px] object-cover object-top"
+          className="w-full max-h-[500px] object-contain"
+          style={{ backgroundColor: "var(--col-bg)" }}
         />
       </div>
 
