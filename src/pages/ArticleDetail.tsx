@@ -31,7 +31,7 @@ export default function ArticleDetail() {
         <img
           src={article.image}
           alt=""
-          className="w-full max-h-[500px] object-cover"
+          className="w-full max-h-[500px] object-cover object-top"
         />
       </div>
 
