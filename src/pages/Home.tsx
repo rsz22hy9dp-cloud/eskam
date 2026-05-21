@@ -458,10 +458,10 @@ function LogosSection() {
     { src: logo3shape, alt: "3Shape" },
   ];
   return (
-    <section className="py-20 md:py-28 px-6 md:px-10" style={{ backgroundColor: "var(--col-bg)" }}>
+    <section className="py-20 md:py-28 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>
       <div className="max-w-site mx-auto" ref={fade.ref}>
         <div className={fade.className}>
-          <span className="eyebrow block mb-12 text-center">Organisations I've worked with</span>
+          <span className="eyebrow block mb-12 text-center" style={{ color: "var(--col-primary)" }}>Organisations I've worked with</span>
           <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
             {logos.map((l) => (
               <img
@@ -469,7 +469,7 @@ function LogosSection() {
                 src={l.src}
                 alt={l.alt}
                 className="object-contain"
-                style={{ height: "48px", filter: "grayscale(100%)", opacity: 0.75 }}
+                style={{ height: "48px", filter: "brightness(0) invert(1)", opacity: 0.85 }}
               />
             ))}
           </div>
