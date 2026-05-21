@@ -5,11 +5,12 @@ import stefanAuthor from "@/assets/stefan-author.jpeg";
 
 const CHAPTER_1_PDF_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/ebook/notes-from-the-whiteboard-ch1.pdf`;
 const CHAPTER_2_PDF_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/ebook/notes-from-the-whiteboard-ch2.pdf`;
+const CHAPTER_3_PDF_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/ebook/notes-from-the-whiteboard-ch3.pdf`;
 
 const chapters = [
   { number: "01", title: "Ways of Working", body: "A concrete look at how real working environments form — and what it takes to change them without losing people.", available: true, pdfUrl: CHAPTER_1_PDF_URL, pdfFilename: "Notes-from-the-Whiteboard-Ways-of-Working.pdf" },
   { number: "02", title: "Work the System, Not the People", body: "Why individual heroics don't scale. How to design the conditions where good work happens naturally.", available: true, pdfUrl: CHAPTER_2_PDF_URL, pdfFilename: "Notes-from-the-Whiteboard-Work-the-System.pdf" },
-  { number: "03", title: "Quarterly Planning & Work Breakdown", body: "A practical model for connecting strategy to execution without drowning in process and governance." },
+  { number: "03", title: "Quarterly Planning — Making the Plan Mean Something", body: "A practical model for connecting strategy to execution without drowning in process and governance.", available: true, pdfUrl: CHAPTER_3_PDF_URL, pdfFilename: "Notes-from-the-Whiteboard-Quarterly-Planning.pdf" },
   { number: "04", title: "Making Strategy Stick", body: "What actually happens between the strategy deck and Monday morning. How to close the gap." },
   { number: "05", title: "Leadership in Complexity", body: "Leading when you can't predict outcomes. How to build trust, make decisions, and move forward without a playbook." },
   { number: "06", title: "Take Care of Yourself First", body: "The chapter no one writes. Why sustainable impact starts with how you manage yourself." },
