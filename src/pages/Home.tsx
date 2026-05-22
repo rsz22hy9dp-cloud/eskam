@@ -50,7 +50,7 @@ function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 md:gap-16 items-center">
           <div>
             {/* Headline */}
-            <h1 className="hero-animate hero-animate-2 font-head uppercase text-[48px] sm:text-[72px] md:text-[88px] lg:text-[110px] leading-[0.92] tracking-tight mb-8">
+            <h1 className="font-head uppercase text-[48px] sm:text-[72px] md:text-[88px] lg:text-[110px] leading-[0.92] tracking-tight mb-8">
               <span style={{ color: "var(--col-white)" }}>Strategy</span>
               <br />
               <span style={{ color: "var(--col-white)" }}>doesn't</span>
