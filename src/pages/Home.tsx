@@ -66,7 +66,7 @@ function Hero() {
             {/* Subheadline */}
             <p
               className="hero-animate hero-animate-3 font-body text-[16px] md:text-[18px] max-w-[50ch] mb-10"
-              style={{ color: "rgba(247,246,245,0.6)" }}>
+              style={{ color: "rgba(247,246,245,0.82)" }}>
 
               Stefan Eskam helps senior leaders in complex organisations close the gap
               between decision and delivery, without adding governance overhead.
@@ -236,7 +236,7 @@ function WhatIDoSection() {
                 <h3 className="font-head text-[22px] uppercase mb-4" style={{ color: "var(--col-white)" }}>
                   {item.title}
                 </h3>
-                <p className="font-body text-[15px] leading-relaxed" style={{ color: "rgba(197,195,198,0.6)" }}>
+                <p className="font-body text-[15px] leading-relaxed" style={{ color: "rgba(197,195,198,0.82)" }}>
                   {item.body}
                 </p>
               </div>
@@ -300,14 +300,14 @@ function WhoSection() {
           <div className="relative p-10 flex flex-col justify-between overflow-hidden" style={{ backgroundColor: "var(--col-accent)" }}>
             <img src={stefanCasual} alt="Stefan Eskam" className="absolute inset-0 w-full h-full object-cover opacity-15" />
             <div>
-              <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] mb-6" style={{ color: "rgba(247,246,245,0.45)" }}>
+              <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] mb-6" style={{ color: "rgba(247,246,245,0.7)" }}>
                 What's different
               </span>
               <h3 className="font-head text-[28px] md:text-[34px] uppercase leading-[0.95] mb-6" style={{ color: "var(--col-white)" }}>
                 Institutional knowledge. Not a framework. Scar tissue. Not a slide
                 deck.
               </h3>
-              <p className="font-body text-[15px] leading-relaxed mb-8" style={{ color: "rgba(247,246,245,0.65)" }}>
+              <p className="font-body text-[15px] leading-relaxed mb-8" style={{ color: "rgba(247,246,245,0.82)" }}>
                 Twenty years of being inside the room, not briefing it. The difference
                 shows quickly.
               </p>
@@ -338,7 +338,7 @@ function ExperienceStrip() {
 
           <div className="hidden md:block w-px self-stretch" style={{ backgroundColor: "rgba(197,195,198,0.2)" }} />
 
-          <p className="font-body text-[16px] leading-relaxed flex-1" style={{ color: "rgba(197,195,198,0.7)" }}>
+          <p className="font-body text-[16px] leading-relaxed flex-1" style={{ color: "rgba(197,195,198,0.85)" }}>
             Not a consultant who parachutes in with a framework.{" "}
             <strong style={{ color: "var(--col-white)" }}>
               Someone who has spent two decades inside complex organisations
@@ -408,7 +408,7 @@ function EbookTease() {
               <br />
               Whiteboard
             </h3>
-            <p className="text-[12px] font-body" style={{ color: "rgba(197,195,198,0.4)" }}>
+            <p className="text-[12px] font-body" style={{ color: "rgba(197,195,198,0.7)" }}>
               Change & Delivery Leadership in Complex Organisations — Stefan Eskam
             </p>
             {/* Decorative circles */}
@@ -439,7 +439,7 @@ function CTABand() {
             let's talk.
           </h2>
           <div className="flex flex-col gap-3 items-start">
-            <p className="text-[12px] font-body" style={{ color: "rgba(247,246,245,0.45)" }}>
+            <p className="text-[12px] font-body" style={{ color: "rgba(247,246,245,0.7)" }}>
               No form. No deck. Just a conversation.
             </p>
             <Button variant="ghost" asChild>
@@ -505,7 +505,7 @@ function TestimonialSection() {
           <p className="font-body text-[13px] font-semibold uppercase tracking-[0.15em]" style={{ color: "var(--col-accent)" }}>
             Violeta Valantinavičienė
           </p>
-          <p className="font-body text-[12px] uppercase tracking-[0.12em] mt-1" style={{ color: "rgba(197,195,198,0.5)" }}>
+          <p className="font-body text-[12px] uppercase tracking-[0.12em] mt-1" style={{ color: "rgba(197,195,198,0.75)" }}>
             Interim Director of Engineering, Vinted / Kleiderkreisel
           </p>
         </div>

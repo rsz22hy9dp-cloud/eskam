@@ -66,7 +66,7 @@ export default function HowIWork() {
           </h1>
           <p
             className="font-body text-[17px] leading-relaxed max-w-[58ch]"
-            style={{ color: "rgba(247,246,245,0.6)" }}
+            style={{ color: "rgba(247,246,245,0.82)" }}
           >
             No six-week assessment. No methodology deck. No engagement framework with a branded
             name. I come in, understand the actual problem, and start moving things within the
@@ -149,7 +149,7 @@ export default function HowIWork() {
                   <span className="font-body text-[15px] shrink-0" style={{ color: "var(--col-accent)" }}>
                     —
                   </span>
-                  <p className="font-body text-[15px] leading-relaxed" style={{ color: "rgba(247,246,245,0.6)" }}>
+                  <p className="font-body text-[15px] leading-relaxed" style={{ color: "rgba(247,246,245,0.82)" }}>
                     {item}
                   </p>
                 </div>
