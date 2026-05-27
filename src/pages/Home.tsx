@@ -517,9 +517,27 @@ export default function Home() {
         title="Stefan Eskam — Change & Delivery Leadership"
         description="Stefan Eskam helps senior leaders in complex organisations close the gap between decision and delivery, without adding governance overhead."
         path="/"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Stefan Eskam",
+            jobTitle: "Change & Delivery Leader",
+            url: "https://www.eskam.dk/",
+            sameAs: ["https://www.linkedin.com/in/stefaneskam/"],
+            email: "mailto:eskam@me.com",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Stefan Eskam",
+            url: "https://www.eskam.dk/",
+          },
+        ]}
       />
       <Hero />
       <ProblemSection />
+
 
       <WhatIDoSection />
       <FullBleedImage src={stefanTeaching1} alt="Stefan teaching a workshop" />

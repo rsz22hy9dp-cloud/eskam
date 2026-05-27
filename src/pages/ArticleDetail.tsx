@@ -23,6 +23,16 @@ export default function ArticleDetail() {
         description={article.excerpt}
         path={`/writing/${article.slug}`}
         type="article"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: article.title,
+          description: article.excerpt,
+          author: { "@type": "Person", name: "Stefan Eskam", url: "https://www.eskam.dk/about" },
+          datePublished: article.date,
+          url: `https://www.eskam.dk/writing/${article.slug}`,
+          mainEntityOfPage: `https://www.eskam.dk/writing/${article.slug}`,
+        }}
       />
       <div className="max-w-site mx-auto mb-10">
         <Link
