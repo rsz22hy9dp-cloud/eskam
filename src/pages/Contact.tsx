@@ -84,15 +84,21 @@ export default function Contact() {
             {/* Right — Form */}
             <form onSubmit={handleSubmit} className="space-y-6">
               {[
-                { label: "Name", key: "name" as const, type: "text" },
-                { label: "Email", key: "email" as const, type: "email" },
-                { label: "Organisation", key: "org" as const, type: "text" },
+                { label: "Name", key: "name" as const, type: "text", id: "contact-name" },
+                { label: "Email", key: "email" as const, type: "email", id: "contact-email" },
+                { label: "Organisation", key: "org" as const, type: "text", id: "contact-org" },
               ].map((field) => (
                 <div key={field.key}>
-                  <label className="block font-body text-[11px] font-semibold uppercase tracking-[0.12em] mb-2" style={{ color: "var(--col-secondary)" }}>
+                  <label
+                    htmlFor={field.id}
+                    className="block font-body text-[11px] font-semibold uppercase tracking-[0.12em] mb-2"
+                    style={{ color: "var(--col-secondary)" }}
+                  >
                     {field.label}
                   </label>
                   <input
+                    id={field.id}
+                    name={field.key}
                     type={field.type}
                     required={field.key !== "org"}
                     value={form[field.key]}
@@ -107,10 +113,16 @@ export default function Contact() {
                 </div>
               ))}
               <div>
-                <label className="block font-body text-[11px] font-semibold uppercase tracking-[0.12em] mb-2" style={{ color: "var(--col-secondary)" }}>
+                <label
+                  htmlFor="contact-message"
+                  className="block font-body text-[11px] font-semibold uppercase tracking-[0.12em] mb-2"
+                  style={{ color: "var(--col-secondary)" }}
+                >
                   Message
                 </label>
                 <textarea
+                  id="contact-message"
+                  name="message"
                   required
                   rows={5}
                   value={form.message}
