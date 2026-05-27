@@ -95,6 +95,10 @@ function Hero() {
             <img
               src={stefanHeadshot}
               alt="Stefan Eskam"
+              width={320}
+              height={500}
+              fetchPriority="high"
+              decoding="async"
               className="w-[220px] md:w-[280px] lg:w-[320px] object-cover rounded-lg md:rounded-none"
               style={{ maxHeight: "500px" }}
             />
