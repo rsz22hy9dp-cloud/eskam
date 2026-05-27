@@ -39,6 +39,18 @@ export default function Ebook() {
         title="Notes From The Whiteboard — Free Ebook by Stefan Eskam"
         description="Three short chapters on why delivery stalls, how to clarify priorities at speed, and how to build rhythm without governance overhead. Free download."
         path="/ebook"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Book",
+          name: "Notes From The Whiteboard",
+          author: { "@type": "Person", name: "Stefan Eskam" },
+          numberOfPages: 3,
+          inLanguage: "en",
+          url: "https://www.eskam.dk/ebook",
+          description:
+            "Three short chapters on why delivery stalls, how to clarify priorities at speed, and how to build rhythm without governance overhead.",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "EUR", availability: "https://schema.org/InStock" },
+        }}
       />
       {/* Hero */}
       <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>

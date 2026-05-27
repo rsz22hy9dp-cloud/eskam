@@ -47,10 +47,11 @@ function ArticleRow({ article, isLast }: { article: Article; isLast: boolean }) 
           </p>
           <Link
             to={href}
+            aria-label={`Read full article: ${article.title}`}
             className="font-body text-[11px] font-semibold uppercase tracking-[0.15em] inline-flex items-center gap-2 hover:opacity-60 transition-opacity"
             style={{ color: "var(--col-text)" }}
           >
-            Read more <span aria-hidden>→</span>
+            Read full article <span aria-hidden>→</span>
           </Link>
         </div>
       </div>
@@ -80,7 +81,7 @@ export default function Writing() {
               className="font-head text-[48px] md:text-[96px] uppercase leading-[0.92] mb-8"
               style={{ color: "var(--col-white)" }}
             >
-              Writing
+              Writing on Delivery & Change
             </h1>
             <p
               className="font-body text-[17px] leading-relaxed max-w-[58ch]"

@@ -46,7 +46,7 @@ export default function About() {
                 className="font-head text-[48px] md:text-[96px] uppercase leading-[0.92] mb-6"
                 style={{ color: "var(--col-white)" }}
               >
-                Stefan Eskam
+                Stefan Eskam — Change &amp; Delivery Leadership
               </h1>
               <p
                 className="font-body text-[13px] font-semibold uppercase tracking-[0.12em] mb-8"
