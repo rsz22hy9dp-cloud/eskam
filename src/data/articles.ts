@@ -6,6 +6,7 @@ export type Article = {
   slug: string;
   image: string;
   date: string;
+  dateIso: string;
   title: string;
   excerpt: string;
   body: string[];
@@ -16,6 +17,7 @@ export const articles: Article[] = [
     slug: "the-plan-wasnt-the-problem",
     image: imgPapers,
     date: "May 2025",
+    dateIso: "2025-05-01",
     title: "The Plan Wasn't the Problem",
     excerpt:
       "Most plans don't fail because they were wrong. They fail because nobody defended them. Every organisation I've worked in has a version of the same pattern.",
@@ -32,6 +34,7 @@ export const articles: Article[] = [
     slug: "you-dont-change-behaviour-by-explaining-it",
     image: imgStressed,
     date: "April 2025",
+    dateIso: "2025-04-01",
     title: "You Don't Change Behaviour by Explaining It",
     excerpt:
       "Most change efforts spend a lot of time on the why. The why is rarely the problem. People aren't resistant because they don't understand it.",
@@ -48,6 +51,7 @@ export const articles: Article[] = [
     slug: "the-gap-has-a-name",
     image: imgComputer,
     date: "March 2025",
+    dateIso: "2025-03-01",
     title: "The Gap Has a Name",
     excerpt:
       "After twenty years working across complex organisations, the thing I keep returning to isn't strategy, and it isn't execution. It's the gap between them.",
