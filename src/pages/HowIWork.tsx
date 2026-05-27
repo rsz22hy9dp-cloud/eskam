@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Seo } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
 import stefanWhiteboard from "@/assets/stefan-whiteboard.jpeg";
@@ -40,6 +41,11 @@ export default function HowIWork() {
 
   return (
     <>
+      <Seo
+        title="How I Work — Stefan Eskam"
+        description="A four-phase approach to closing the strategy-to-delivery gap: understand the real problem, clarify priorities, build rhythm, stay close to the work."
+        path="/how-i-work"
+      />
       {/* SECTION 1 — Hero */}
       <section
         className="relative py-24 md:py-32 px-6 md:px-10 bg-cover bg-center"

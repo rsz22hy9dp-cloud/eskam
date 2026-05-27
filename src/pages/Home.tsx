@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Seo } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
 import stefanCasual from "@/assets/stefan-casual.jpeg";
@@ -512,8 +513,14 @@ function TestimonialSection() {
 export default function Home() {
   return (
     <>
+      <Seo
+        title="Stefan Eskam — Change & Delivery Leadership"
+        description="Stefan Eskam helps senior leaders in complex organisations close the gap between decision and delivery, without adding governance overhead."
+        path="/"
+      />
       <Hero />
       <ProblemSection />
+
       <WhatIDoSection />
       <FullBleedImage src={stefanTeaching1} alt="Stefan teaching a workshop" />
       <WhoSection />
