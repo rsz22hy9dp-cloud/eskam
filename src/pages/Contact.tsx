@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Seo } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
 import { supabase } from "@/integrations/supabase/client";
@@ -38,6 +39,11 @@ export default function Contact() {
 
   return (
     <>
+      <Seo
+        title="Contact — Stefan Eskam"
+        description="Get in touch about delivery leadership, change programmes, or a stalled strategy you need to move. Direct response, no gatekeeping."
+        path="/contact"
+      />
       {/* Header */}
       <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>
         <div className="max-w-site mx-auto">

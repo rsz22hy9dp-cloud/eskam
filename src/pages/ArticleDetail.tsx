@@ -1,6 +1,7 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import { articles } from "@/data/articles";
+import { Seo } from "@/components/Seo";
 
 export default function ArticleDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -17,6 +18,12 @@ export default function ArticleDetail() {
       className="py-12 md:py-16 px-6 md:px-10"
       style={{ backgroundColor: "var(--col-bg)" }}
     >
+      <Seo
+        title={`${article.title} — Stefan Eskam`}
+        description={article.excerpt}
+        path={`/writing/${article.slug}`}
+        type="article"
+      />
       <div className="max-w-site mx-auto mb-10">
         <Link
           to="/writing"

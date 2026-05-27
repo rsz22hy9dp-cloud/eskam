@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Seo } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
 
@@ -34,6 +35,11 @@ export default function Ebook() {
 
   return (
     <>
+      <Seo
+        title="Notes From The Whiteboard — Free Ebook by Stefan Eskam"
+        description="Three short chapters on why delivery stalls, how to clarify priorities at speed, and how to build rhythm without governance overhead. Free download."
+        path="/ebook"
+      />
       {/* Hero */}
       <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>
         <div className="max-w-site mx-auto">

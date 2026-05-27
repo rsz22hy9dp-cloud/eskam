@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Seo } from "@/components/Seo";
 import { useScrollFade } from "@/hooks/useScrollFade";
 import avatar from "@/assets/character-coffee.png";
 import { articles, type Article } from "@/data/articles";
@@ -60,6 +61,11 @@ function ArticleRow({ article, isLast }: { article: Article; isLast: boolean }) 
 export default function Writing() {
   return (
     <>
+      <Seo
+        title="Writing — Stefan Eskam"
+        description="Short, direct essays on strategy, delivery, and the gap between decision and execution in complex organisations."
+        path="/writing"
+      />
       {/* Hero */}
       <section
         className="py-24 md:py-32 px-6 md:px-10"

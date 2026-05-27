@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Seo } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { useScrollFade } from "@/hooks/useScrollFade";
 import stefanHeadshot from "@/assets/stefan-headshot.jpeg";
@@ -28,6 +29,11 @@ export default function About() {
 
   return (
     <>
+      <Seo
+        title="About — Stefan Eskam"
+        description="Twenty years closing the gap between strategy and delivery across Danske Bank, SDC, and 3Shape. Direct, operational, accountable."
+        path="/about"
+      />
       {/* SECTION 1 — Hero */}
       <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "var(--col-text)" }}>
         <div className="max-w-site mx-auto">
