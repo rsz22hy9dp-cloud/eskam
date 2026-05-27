@@ -56,7 +56,7 @@ export default function About() {
               </p>
               <p
                 className="font-body text-[17px] leading-relaxed max-w-[58ch]"
-                style={{ color: "rgba(247,246,245,0.6)" }}
+                style={{ color: "rgba(247,246,245,0.82)" }}
               >
                 Twenty years inside complex organisations. Not advising from the outside — inside.
                 Carrying programmes that couldn't afford to fail, in environments where misalignment
@@ -133,7 +133,7 @@ export default function About() {
             <div className="max-w-[62ch] space-y-6">
               <p
                 className="font-body text-[17px] leading-relaxed"
-                style={{ color: "rgba(247,246,245,0.6)" }}
+                style={{ color: "rgba(247,246,245,0.82)" }}
               >
                 Most delivery problems are not delivery problems. They are clarity problems.
                 Someone has not made a decision, or the decision was made but never communicated
@@ -143,7 +143,7 @@ export default function About() {
               </p>
               <p
                 className="font-body text-[17px] leading-relaxed"
-                style={{ color: "rgba(247,246,245,0.6)" }}
+                style={{ color: "rgba(247,246,245,0.82)" }}
               >
                 I have been inside the room when the regulatory deadline moved, when the vendor
                 didn't deliver, when three senior stakeholders had three different priorities.

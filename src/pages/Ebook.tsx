@@ -70,7 +70,7 @@ export default function Ebook() {
           </h1>
           <p
             className="font-body text-[17px] md:text-[20px] leading-relaxed max-w-[60ch]"
-            style={{ color: "rgba(247,246,245,0.65)" }}
+            style={{ color: "rgba(247,246,245,0.82)" }}
           >
             Three chapters on what actually works inside complex organisations. No theory.
             No framework introductions. Just what I have seen, tried, and found to be true.
