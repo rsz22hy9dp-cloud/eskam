@@ -28,8 +28,10 @@ export default function ArticleDetail() {
           "@type": "Article",
           headline: article.title,
           description: article.excerpt,
+          image: [new URL(article.image, "https://www.eskam.dk").toString()],
           author: { "@type": "Person", name: "Stefan Eskam", url: "https://www.eskam.dk/about" },
-          datePublished: article.date,
+          datePublished: article.dateIso,
+          dateModified: article.dateIso,
           url: `https://www.eskam.dk/writing/${article.slug}`,
           mainEntityOfPage: `https://www.eskam.dk/writing/${article.slug}`,
         }}
